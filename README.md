@@ -1,5 +1,3 @@
-# Note
-personal note
 <h1>Note List</h1>
 
 
