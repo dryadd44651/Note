@@ -22,7 +22,11 @@ docker rm -v my-container
 - docker cp D:/111.txt  cfbd0ea95963:/home/jovyan/work/
 
 # list all container
-- docker container ls
+- docker container ls: list all
+- docker ps -a: list all
+- docker ps: list running container
+
+
 
 
 # Linux cmd
