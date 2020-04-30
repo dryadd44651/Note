@@ -1,7 +1,8 @@
-#spark
-docker run --rm -p 8888:8888 -p21:21 jupyter/scipy-notebook
-#R Rstudio
-docker run --rm -p 8787:8787 -e PASSWORD=yourpasswordhere rocker/rstudio
+# run images
+## spark
+> docker run --rm -p 8888:8888 jupyter/scipy-notebook
+## R Rstudio
+> docker run --rm -p 8787:8787 -e PASSWORD=yourpasswordhere rocker/rstudio
 
 
 docker exec -it 3084f6cd2f5c bash
