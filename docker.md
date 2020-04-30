@@ -12,6 +12,7 @@ docker rm -v my-container
 
 # run a command container
 - run bash
+- -it: replace the defalut cmd
 >- docker exec -it 3084f6cd2f5c bash
 >- docker exec -it cfbd0ea95963 bash
 - --user root: run as root
