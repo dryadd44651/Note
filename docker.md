@@ -14,10 +14,10 @@ docker rm -v my-container
 - run bash
 >- docker exec -it 3084f6cd2f5c bash
 >- docker exec -it cfbd0ea95963 bash
-# --user root: run as root
-docker exec -it --user root cfbd0ea95963 bash
+- --user root: run as root
+>- docker exec -it --user root cfbd0ea95963 bash
 
-#copy the file between local and container
+# copy the file between local and container
 - docker cp cfbd0ea95963:/home/jovyan/work/test D:/
 - docker cp D:/111.txt  cfbd0ea95963:/home/jovyan/work/
 
