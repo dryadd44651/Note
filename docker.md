@@ -34,3 +34,7 @@ docker rm -v my-container
 - apt-get upgrade
 - apt-get install openssh-client
 - apt-get install net-tools
+
+https://segmentfault.com/a/1190000012079081
+
+https://docs.docker.com/engine/reference/run/
