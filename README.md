@@ -4,7 +4,7 @@
 <details open>
   <summary><b>Computer vision</b></summary>
   <ul>
-    <li><a href="https://github.com/dryadd44651/Note/tree/master/Perspective_Projections">Perspective_Projections</a>
+    <li><a href="https://github.com/dryadd44651/Note/tree/master/Computer_vision/Perspective_Projections">Perspective_Projections</a>
   </ul>
 </details>
 <details open>
