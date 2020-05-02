@@ -16,6 +16,6 @@
 <details open>
   <summary><b>Statistics</b></summary>
   <ul>
-    <li><a href="https://github.com/dryadd44651/Note/blob/master/docker.md">ANOVA</a>
+    <li><a href="https://github.com/dryadd44651/Note/tree/master/Statistics/ANOVA">ANOVA</a>
   </ul>
 </details>
