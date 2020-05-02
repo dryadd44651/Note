@@ -8,8 +8,14 @@
   </ul>
 </details>
 <details open>
-  <summary><b>Computer vision</b></summary>
+  <summary><b>Docker</b></summary>
   <ul>
     <li><a href="https://github.com/dryadd44651/Note/blob/master/docker.md">Docker</a>
+  </ul>
+</details>
+<details open>
+  <summary><b>Statistics</b></summary>
+  <ul>
+    <li><a href="https://github.com/dryadd44651/Note/blob/master/docker.md">ANOVA</a>
   </ul>
 </details>
