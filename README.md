@@ -17,5 +17,7 @@
   <summary><b>Statistics</b></summary>
   <ul>
     <li><a href="https://github.com/dryadd44651/Note/tree/master/Statistics/ANOVA">ANOVA</a>
+    <li><a href="https://github.com/dryadd44651/Note/tree/master/Statistics/chi-squared-test">chi-squared-test</a>
+    
   </ul>
 </details>
