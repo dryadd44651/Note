@@ -33,3 +33,9 @@
     <li><a href="https://github.com/dryadd44651/Note/tree/master/DesignPatterns">DesignPatterns</a>
   </ul>
 </details>
+<details open>
+  <summary><b>Python</b></summary>
+  <ul>
+    <li><a href="https://github.com/dryadd44651/Note/tree/master/Python/Thread_Sample">Thread_Sample</a>
+  </ul>
+</details>
