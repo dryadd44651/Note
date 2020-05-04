@@ -25,7 +25,11 @@
   <summary><b>JavaScript</b></summary>
   <ul>
     <li><a href="https://github.com/dryadd44651/Note/blob/master/JavaScript/JS_OOP.pdf">OOP</a>
-    
-    
+  </ul>
+</details>
+<details open>
+  <summary><b>Design Patterns</b></summary>
+  <ul>
+    <li><a href="https://github.com/dryadd44651/Note/tree/master/DesignPatterns">DesignPatterns</a>
   </ul>
 </details>
