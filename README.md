@@ -8,7 +8,7 @@
   </ul>
 </details>
 <details open>
-  <summary><b>Docker</b></summary>
+  <summary><b>Script</b></summary>
   <ul>
     <li><a href="https://github.com/dryadd44651/Note/blob/master/Docker">Docker</a>
   </ul>
