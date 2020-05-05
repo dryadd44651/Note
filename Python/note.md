@@ -6,3 +6,9 @@ print([i[0] for i in s])
 
 #['betacellular', 'anacell', 'cetracular', 'deltacellular', 'eurocell']
 ```
+
+## py to exe
+```
+pip install auto-py-to-exe
+auto-py-to-exe
+```
