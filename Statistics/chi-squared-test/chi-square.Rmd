@@ -2,19 +2,23 @@
 title: "chi-square"
 output: html_notebook
 ---
+# goodness of fit test
 ## With experience
 x is observed data
 y is past statistical data
 ```{r}
 x <- c(4,6,17,16,8,9)
 y <- c(5,5,20,20,10,10)
-
+y = y*sum(x)/sum(y)
 s = 0
 for( i in 1:6){
   s = s+(x[i]-y[i])^2/y[i]
 }
 df = length(x)-1
 print(paste("chi-square: ",s,"df:",df,"p-value",1-pchisq(s,df)))
+
+
+chisq.test(x, p = c(5/70, 5/70, 20/70, 20/70, 10/70, 10/70))
 
 ```
 
@@ -31,6 +35,8 @@ print(chisq.test(dice))
 dice.chiq = sum((dice-10)^2/10)
 dice.df = length(dice)-1
 print(paste("chi-square: ",dice.chiq,"df:",dice.df,"p-value",1-pchisq(dice.chiq,dice.df)))
+
+chisq.test(dice, p = c(1/6, 1/6, 1/6, 1/6, 1/6, 1/6))
 
 ```
 ## Chi-square test of independence
