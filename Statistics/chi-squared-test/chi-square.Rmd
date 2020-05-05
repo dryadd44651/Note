@@ -39,7 +39,7 @@ print(paste("chi-square: ",dice.chiq,"df:",dice.df,"p-value",1-pchisq(dice.chiq,
 chisq.test(dice, p = c(1/6, 1/6, 1/6, 1/6, 1/6, 1/6))
 
 ```
-## Chi-square test of independence
+# Chi-square test of independence
                   Total
 A     80  100 20  200 
 B     99  190 96  385 
