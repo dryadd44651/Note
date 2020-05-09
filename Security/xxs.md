@@ -26,8 +26,10 @@ Well this time I had to read some code in order to understand the applications l
         $('#tabContent').html(html);
 ```
 As you see the num parameter is used to generate the img tag. The ideas was to break-out the quotes and insert some sneaky javascript code. Again I've used the onerror attribute to insert JS. Insert this into the URL address bar and you'll get your alert():
-
+```
 https://xss-game.appspot.com/level3/frame#3' onerror='alert(1)';
+"Image " + parseInt(num) = Image + 3' onerror='alert(1)';
+```
 ## Level 4
 This is quite tricky. This time I have followed the provided hints. Having the JS console activated and requesting https://xss-game.appspot.com/level4/frame?timer=' showed me following output:
 
