@@ -12,8 +12,9 @@ This is the most obvious and easiest one. Just insert following code and you're 
 
 ## Level 2
 Since the script won't work you'll have to think of another tags to trigger JavaScript code execution. The first thing which came in mind was to use img tags along with the onerror attributes. Here you go:
-
+```
 <img src="http://inexist.ent" onerror="javascript:alert(1)"/>
+```
 ## Level 3
 Well this time I had to read some code in order to understand the applications logic. If you toggle the code you'll see index.html:
 
