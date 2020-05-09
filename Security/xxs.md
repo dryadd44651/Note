@@ -36,7 +36,8 @@ startTimer(''');
 Obviously there is again a way to escape the function and append the alert() call. I have tried several things:
 
 https://xss-game.appspot.com/level4/frame?timer=');
-```   
+```
+```
    SyntaxError: unterminated string literal
 
     startTimer('')');
