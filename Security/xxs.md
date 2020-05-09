@@ -80,4 +80,4 @@ Afterwards the text after the hash is used as the scripts src:
 
       scriptEl.src = url;
 ```
-[ref: ](http://blog.dornea.nu/2014/06/02/googles-xss-game-solutions/)
+[ref: http://blog.dornea.nu/2014/06/02/googles-xss-game-solutions/](http://blog.dornea.nu/2014/06/02/googles-xss-game-solutions/)
