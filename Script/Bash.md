@@ -32,3 +32,12 @@ B:[0-9]\{3\}-
 $:end
 (no $ (001) 345-00001 will match)
 ```
+# Print Line
+- awk print 2th line
+- head print 1~2 line and tail print last line
+```
+awk "NR == 2" test.txt
+head -2 test.txt | tail -1
+```
+
+
