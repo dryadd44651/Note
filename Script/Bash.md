@@ -109,7 +109,7 @@ is 3
 sunny 2
 day 1
 ```
-solution
+**solution1**
 ```
 awk '\
 { for (i=1; i<=NF; i++) 
@@ -149,5 +149,13 @@ sort -r means "reverse the result of comparisons".
 sort -k 2 means "sort by the second word"
 
 ```
-
+**solution2**
+```
+cat words.txt | tr -s ' ' '\n' | sort | uniq -c | sort -r | awk '{ print $2, $1 }'
+```
+- tr -s: truncate the string with target string, but only remaining one instance (e.g. multiple whitespaces)
+- sort: To make the same string successive so that uniq could count the same string fully and correctly.
+- uniq -c: uniq is used to filter out the repeated lines which are successive, -c means counting
+- sort -r: -r means sorting in descending order
+- awk '{ print $2, $1 }': To format the output
 
