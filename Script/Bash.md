@@ -39,5 +39,64 @@ $:end
 awk "NR == 2" test.txt
 head -2 test.txt | tail -1
 ```
+# Transpose File
+Given a text file file.txt, transpose its content.
+```
+name age
+alice 21
+ryan 30
+Output the following:
+
+name alice ryan
+age 21 30
+```
+sample1
+```
+awk '
+{     
+   print $var
+}' file.txt
+
+result:
+
+name age
+alice 21
+ryan 30
+```
+sample2
+```
+awk '
+{     
+   print $1
+}' file.txt
+
+result:
+
+name
+alice
+ryan
+```
+solution
+```
+awk '
+{     
+    for (i = 1; i <= NF; i++) {
+        s[i] = s[i] " " $i
+    }
+}END{
+    for (i = 1; s[i] != ""; i++) {
+        print s[i];
+    }
+}' file.txt
+
+#got three row part '{for}' will run three times
+#NR: row 123
+#NF: number of col 222
+#END: first part for finished(three times)
+#second part for print
+```
+
+
+
 
 
