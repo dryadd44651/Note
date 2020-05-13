@@ -19,11 +19,11 @@
 - wc file: show line, word, bytes
 
 **input/output**
-echo hello > hello.txt: redirect to a file
-echo hello >> hello.txt: append
-cat < hello.txt: read hello.txt to cat
+- echo hello > hello.txt: redirect to a file
+- echo hello >> hello.txt: append
+- cat < hello.txt: read hello.txt to cat
 
-**play vedio in terminal**
+**download and play vedio in terminal**
 ```
 #sudo pip install youtube_dl
 #download the vedio from https://www.youtube.com/watch?v=pq44-o-vTXo
