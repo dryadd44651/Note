@@ -39,4 +39,31 @@ mplayer -vo caca -quiet net_h264.mp4 # play
 **find path**
 - which python
 - which java
+- $PWD #current path
+- $PATH #system path
+- PATH=$PATH:$PWD #add current path to system path(this is temporary)
+- write "PATH=$PATH:$PWD" to /.bashrc #permanent add
 
+**chmod**
+- chmod +x file: add exe(add too all)
+- chmod -r file: remove read
+- chmod 741 file: -rwx-r-x-(user group other)
+
+**mv**
+mv hwllo hello #rename to hello
+mv hello ../hello #move to ../
+
+**cp**
+cp a ../a #copy to ../
+cp -r dir ../dir #copy to ../
+
+**rm**
+rm a #delet a
+rm a b c #delete a b c
+rm -r dir #recursive delete all file in dir
+rm -f a #force delete
+
+**yes**
+yes #print 'y' nonstop
+yes 'good' #print 'good' nonstop
+yes | sudo apt-get install ... #y to all install query
