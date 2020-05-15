@@ -14,6 +14,9 @@
 - tail -f file: show when file update
 - less file: find the string "123" with /123 (q to left, n next, shift last)
 - cat file | grep -n srt: find the str in file with line# (-n)
+```
+cat *.txt > ./tmp/all.txt #write all txt file data into all.txt
+```
 
 **wc**
 - wc file: show line, word, bytes
@@ -34,7 +37,11 @@ ffmpeg -i net.mp4 net_h264.mp4 # conversion
 mplayer -vo caca -quiet net_h264.mp4 # play
 ```
 **Shebang (Unix)**
-# /usr/bin/env python3
+```
+#!/usr/bin/env python3
+...python script
+```
+this python file will open by python3 in default
 
 **find path**
 - which python
