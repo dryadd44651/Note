@@ -50,20 +50,22 @@ mplayer -vo caca -quiet net_h264.mp4 # play
 - chmod 741 file: -rwx-r-x-(user group other)
 
 **mv**
-mv hwllo hello #rename to hello
-mv hello ../hello #move to ../
+- mv hwllo hello #rename to hello
+- mv hello ../hello #move to ../
 
 **cp**
-cp a ../a #copy to ../
-cp -r dir ../dir #copy to ../
+- cp a ../a #copy to ../
+- cp -r dir ../dir #copy to ../
 
 **rm**
-rm a #delet a
-rm a b c #delete a b c
-rm -r dir #recursive delete all file in dir
-rm -f a #force delete
+- rm a #delet a (Danger, can't undo)
+- rm a b c #delete a b c
+- rm -r dir #recursive delete all file in dir
+- rm -f a #force delete
 
 **yes**
-yes #print 'y' nonstop
-yes 'good' #print 'good' nonstop
-yes | sudo apt-get install ... #y to all install query
+- yes #print 'y' nonstop (ctrl + C to stop)
+- yes 'good' #print 'good' nonstop
+- yes | sudo apt-get install ... #y to all install query
+- yes 'hello' > hello.txt #append 'hello' to hello.txt nonstop (Danger)
+
