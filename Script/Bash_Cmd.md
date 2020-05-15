@@ -135,6 +135,15 @@ sys     0m1.016s
 ```
 **diff**
 *compare the diff*
+```
+howard@DESKTOP-0QJC6L6:~$ echo 123 > a
+howard@DESKTOP-0QJC6L6:~$ echo 1234 > a1
+howard@DESKTOP-0QJC6L6:~$ diff a a1
+1c1
+< 123
+---
+> 1234
+```
 #xarg: execute parallelly will cause different results
 
 ```
