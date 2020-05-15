@@ -159,3 +159,38 @@ cat words.txt | tr -s ' ' '\n' | sort | uniq -c | sort -r | awk '{ print $2, $1 
 - sort -r: -r means sorting in descending order
 - awk '{ print $2, $1 }': To format the output
 
+# mutithread
+If each command do not print string, the command will execute parallelly
+```
+echo 1 >> test | echo 2 >> test | echo 3 >> test
+cat test
+2
+1
+3
+```
+# xargs
+- *xargs will split the arg and execute it respectively *
+- -n3 get 3 elements, -P3 perform 3 at once (max)
+```
+echo 1 1 1 2 2 2 3 3 3| xargs -n3 -P3 echo
+1 1 1
+2 2 2
+3 3 3
+echo 1 1 1 2 2 2 3 3 3| xargs -n2 -P9 echo
+1 1
+1 2
+2 2
+3 3
+3
+echo 1 1 1 2 2 2 3 3 3| xargs -n1 -P9 echo
+1
+1
+1
+2
+2
+2
+3
+3
+3
+```
+
