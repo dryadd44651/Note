@@ -33,3 +33,10 @@ ffmpeg -i net.mp4 net_h264.mp4 # conversion
 #sudo apt install mplayer
 mplayer -vo caca -quiet net_h264.mp4 # play
 ```
+**Shebang (Unix)**
+# /usr/bin/env python3
+
+**find path**
+- which python
+- which java
+
