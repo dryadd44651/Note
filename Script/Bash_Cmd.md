@@ -76,3 +76,7 @@ this python file will open by python3 in default
 - yes | sudo apt-get install ... #y to all install query
 - yes 'hello' > hello.txt #append 'hello' to hello.txt nonstop (Danger)
 
+**word count**
+- cat a.txt | sort | uniq -c #uniq -c will aggregate and count the word
+
+
