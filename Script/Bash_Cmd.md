@@ -144,17 +144,32 @@ howard@DESKTOP-0QJC6L6:~$ diff a a1
 ---
 > 1234
 ```
-#xarg: execute parallelly will cause different results
 
+**printf**
+#a + 3 spaces+b + 1 space+66.12(show 2 digit)
 ```
-howard@DESKTOP-0QJC6L6:~$ time man ls | xargs -n5 -P10  >>a1
-xargs: unmatched single quote; by default quotes are special to xargs unless you use the -0 option
+printf "%-3s %-1s %-4.2f\n" a b 66.1234
+a   b 66.12
+#3 spaces + None
+printf "%3s %0.0s\n" a b
+   a
+#%0.0 = %. = %.0 = %0.
+```
+```
+printf "%s\n" {1..100}
+1
+2
+3...
+100
 
-real    0m0.322s
-user    0m0.125s
-sys     0m0.281s
-howard@DESKTOP-0QJC6L6:~$ diff a a1
-176,195d175
-< LS(1) User Commands LS(1) NAME ls - list directory contents SYNOPSIS ls [OPTION]... [FILE]... DESCRIPTION List information about the FILEs (the current directory by default). Sort entries alphabetically if none of -cftuvSUX nor --sort is specified. Mandatory arguments to long options are mandatory for short options too. -a, --all do not ignore entries starting with . -A, --almost-all do not list implied . and .. --author with -l, print the author of each file -b, --escape print C-style escapes for nongraphic......
+printf "1%.s" {1..10}
+1111111111h
+```
+```
+howard@DESKTOP-0QJC6L6:~$ printf "1%.s " {1..100} > a
+howard@DESKTOP-0QJC6L6:~$ printf "2%.s " {1..100} >> a
+howard@DESKTOP-0QJC6L6:~$ printf "3%.s " {1..100} >> a
+howard@DESKTOP-0QJC6L6:~$ cat a
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
 ```
 
