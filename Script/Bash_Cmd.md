@@ -172,4 +172,34 @@ howard@DESKTOP-0QJC6L6:~$ printf "3%.s " {1..100} >> a
 howard@DESKTOP-0QJC6L6:~$ cat a
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
 ```
+**find**
+find the file
+```
+sudo find /etc -name python
+/etc/apparmor.d/abstractions/python
+
+find  /mnt/c/Users/dryad/OneDrive/ -name 'test*'
+/mnt/c/Users/dryad/OneDrive/Desktop/test
+/mnt/c/Users/dryad/OneDrive/Desktop/test/test.py
+/mnt/c/Users/dryad/OneDrive/Desktop/test/test.txt
+```
+**grep**
+- i stands for ignore case (optional in your case).
+- R stands for recursive.
+- l stands for "show the file name, not the result itself".
+```
+howard@DESKTOP-0QJC6L6:~/test$ cat a
+123456789
+howard@DESKTOP-0QJC6L6:~/test$ cat a1
+23456789
+grep -ril '1' ./
+./a
+
+grep '1' ./a
+123456789
+
+grep -r 'print("123")' /mnt/c/Users/dryad/OneDrive
+/mnt/c/Users/dryad/OneDrive/Desktop/test/test.py:print("123")
+
+```
 
