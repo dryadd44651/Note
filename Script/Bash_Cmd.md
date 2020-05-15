@@ -80,3 +80,72 @@ this python file will open by python3 in default
 - cat a.txt | sort | uniq -c #uniq -c will aggregate and count the word
 
 
+**mutithread**
+If each command do not print string, the command will execute parallelly
+```
+echo 1 >> test | echo 2 >> test | echo 3 >> test
+cat test
+2
+1
+3
+```
+**xargs**
+- *xargs will split the arg and execute it respectively *
+- -n3 get 3 elements, -P3 perform 3 at once (max)
+```
+echo 1 1 1 2 2 2 3 3 3| xargs -n3 -P3 echo
+1 1 1
+2 2 2
+3 3 3
+echo 1 1 1 2 2 2 3 3 3| xargs -n2 -P9 echo
+1 1
+1 2
+2 2
+3 3
+3
+echo 1 1 1 2 2 2 3 3 3| xargs -n1 -P9 echo
+1
+1
+1
+2
+2
+2
+3
+3
+3
+```
+**time**
+*running time*
+```
+time man ls | xargs -n1 >>a
+xargs: unmatched single quote; by default quotes are special to xargs unless you use the -0 option
+
+real    0m2.507s
+user    0m0.219s
+sys     0m1.313s
+```
+#use more process => run faster (-P100)
+```
+time man ls | xargs -n1 -P100 >>a
+xargs: unmatched single quote; by default quotes are special to xargs unless you use the -0 option
+
+real    0m0.774s
+user    0m0.109s
+sys     0m1.016s
+```
+**diff**
+*compare the diff*
+#xarg: execute parallelly will cause different results
+
+```
+howard@DESKTOP-0QJC6L6:~$ time man ls | xargs -n5 -P10  >>a1
+xargs: unmatched single quote; by default quotes are special to xargs unless you use the -0 option
+
+real    0m0.322s
+user    0m0.125s
+sys     0m0.281s
+howard@DESKTOP-0QJC6L6:~$ diff a a1
+176,195d175
+< LS(1) User Commands LS(1) NAME ls - list directory contents SYNOPSIS ls [OPTION]... [FILE]... DESCRIPTION List information about the FILEs (the current directory by default). Sort entries alphabetically if none of -cftuvSUX nor --sort is specified. Mandatory arguments to long options are mandatory for short options too. -a, --all do not ignore entries starting with . -A, --almost-all do not list implied . and .. --author with -l, print the author of each file -b, --escape print C-style escapes for nongraphic......
+```
+
