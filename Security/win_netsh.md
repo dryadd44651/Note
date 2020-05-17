@@ -57,4 +57,9 @@ netsh advfirewall firewall set rule name="File and Printer Sharing (Echo Request
 
 Updated 2 rule(s).
 Ok.
+netsh advfirewall firewall set rule name="File and Printer Sharing (Echo Request - ICMPv4-Out)" new enable=yes
+
+Updated 2 rule(s).
+Ok.
+
 ```
