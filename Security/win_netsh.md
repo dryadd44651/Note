@@ -1,3 +1,4 @@
+[URL](http://winintro.ru/netsh_technicalreference.en/html/1a736f2d-ecf8-4780-8e0f-85c4db75230b.htm)
 # add, show, delete firewall rule
 ```
 C:\Windows\system32>netsh advfirewall firewall add rule name="Test" profile=domain,private protocol=any enable=yes DIR=In program="C:\Program Files (x86)\Tencent\WeChat\WeChat.exe" Action=Allow
