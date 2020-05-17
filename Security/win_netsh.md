@@ -50,3 +50,11 @@ Action:                               Allow
 Ok.
 
 ```
+# open the ICMP
+```
+#if ping can't reach
+netsh advfirewall firewall set rule name="File and Printer Sharing (Echo Request - ICMPv4-In)" new enable=yes
+
+Updated 2 rule(s).
+Ok.
+```
