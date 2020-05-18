@@ -1,3 +1,4 @@
+# method1
 - Login to udemy go to the course and play the lecture, for eg. first lecture is running
 - Open ‘Developer tools’ by pressing ‘F12’ go to the ‘sources’ tab
 - Switch to ‘Snippets’ tab
@@ -13,3 +14,7 @@ And now Right click on the snippet file (udemy-downloader) which have the script
 It will download the video for you in selected Quality - (on which it is playing)
 Now you only need to follow step number 7 to download your favorite lecture.
 
+
+# method2
+- document.querySelector("video")
+- get the link and dwonload
