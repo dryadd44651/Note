@@ -6,7 +6,8 @@ abstract class Animal {//can have base case
     
 }
 //class Pig extends Animal,Mammal => is not allowed
-//Because Animal,Mammal may have same function
+//Because Animal,Mammal may have same function(deadly diamond problem)
+//slove by interface multi implement/ inner class
 class Pig extends Animal {
   public void animalSound() {
     System.out.println("The pig says: wee wee");
