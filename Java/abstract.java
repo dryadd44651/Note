@@ -5,7 +5,8 @@ abstract class Animal {//can have base case
     abstract public void animalSound(); 
     
 }
-
+//class Pig extends Animal,Mammal => is not allowed
+//Because Animal,Mammal may have same function
 class Pig extends Animal {
   public void animalSound() {
     System.out.println("The pig says: wee wee");
