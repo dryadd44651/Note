@@ -89,7 +89,7 @@ class Animal {
     void sleep(){
         cout<<"Zzz"<<endl;
     }
-    void animalSound();
+    virtual void animalSound() = 0;
 
 };
 class Mammal {
