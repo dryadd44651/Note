@@ -38,6 +38,13 @@ map['one'] =1
 map['two'] =2
 map['three'] =3
 print(map)
+#very usful
+listMap = defaultdict(list) 
+listMap[1].append(11)
+print(listMap[0],listMap[1])
+intMap = defaultdict(int)
+intMap[1]+=1
+print(intMap[0],intMap[1])
 
 #list operation
 print('list')
@@ -84,6 +91,8 @@ heap
 1
 map
 {'one': 1, 'two': 2, 'three': 3}
+[] [11]
+0 1
 list
 [10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
 [11, 12, 13, 14, 15, 16, 17, 18]
