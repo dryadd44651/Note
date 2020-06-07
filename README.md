@@ -1,63 +1,30 @@
-<h1>Note List</h1>
+# Note List
+
+## Computer vision
+- [Perspective_Projections](https://github.com/dryadd44651/Note/tree/master/Computer_vision/Perspective_Projections)
+## Script
+- [Docke](https://github.com/dryadd44651/Note/blob/master/Docker)
+## Statistics
+- [ANOVA](https://github.com/dryadd44651/Note/tree/master/Statistics/ANOVA)
+- [chi-squared-test](https://github.com/dryadd44651/Note/tree/master/Statistics/chi-squared-test)
+## JavaScript
+- [OOP](https://github.com/dryadd44651/Note/blob/master/JavaScript/JS_OOP.pdf)
+## Java
+- note
+- abstract
+- inherit_static
+- inner_class
+- interface
+- lambda
+## Design Patterns
+- [DesignPatterns](https://github.com/dryadd44651/Note/tree/master/DesignPatterns)
+## Python
+- [Thread_Sample](https://github.com/dryadd44651/Note/tree/master/Python/Thread_Sample)
+- [WeChatAPI](https://github.com/dryadd44651/Note/tree/master/Python/WeChatAPI)
+- [AdaBoost](https://github.com/dryadd44651/PythonAda)
+## Security
+- [XXS](https://github.com/dryadd44651/Note/blob/master/Security/xxs.md)
 
 
-<details open>
-  <summary><b>Computer vision</b></summary>
-  <ul>
-    <li><a href="https://github.com/dryadd44651/Note/tree/master/Computer_vision/Perspective_Projections">Perspective_Projections</a>
-  </ul>
-</details>
-<details open>
-  <summary><b>Script</b></summary>
-  <ul>
-    <li><a href="https://github.com/dryadd44651/Note/blob/master/Docker">Docker</a>
-  </ul>
-</details>
-<details open>
-  <summary><b>Statistics</b></summary>
-  <ul>
-    <li><a href="https://github.com/dryadd44651/Note/tree/master/Statistics/ANOVA">ANOVA</a>
-    <li><a href="https://github.com/dryadd44651/Note/tree/master/Statistics/chi-squared-test">chi-squared-test</a>
-    
-  </ul>
-</details>
-<details open>
-  <summary><b>JavaScript</b></summary>
-  <ul>
-    <li><a href="https://github.com/dryadd44651/Note/blob/master/JavaScript/JS_OOP.pdf">OOP</a>
-  </ul>
-</details>
-<details open>
-  <summary><b>Java</b></summary>
-  <ul>
-    <li>note
-    <li>abstract
-    <li>inherit_static
-    <li>inner_class
-    <li>interface
-    <li>lambda
-  </ul>
-</details>
-<details open>
-  <summary><b>Design Patterns</b></summary>
-  <ul>
-    <li><a href="https://github.com/dryadd44651/Note/tree/master/DesignPatterns">DesignPatterns</a>
-  </ul>
-</details>
-<details open>
-  <summary><b>Python</b></summary>
-  <ul>
-    <li><a href="https://github.com/dryadd44651/Note/tree/master/Python/Thread_Sample">Thread_Sample</a>
-    <li><a href="https://github.com/dryadd44651/Note/tree/master/Python/WeChatAPI">WeChatAPI</a>
-    <li><a href="https://github.com/dryadd44651/PythonAda">AdaBoost</a>
-      
-  </ul>
-</details>
-<details open>
-  <summary><b>Security</b></summary>
-  <ul>
-    <li><a href="https://github.com/dryadd44651/Note/blob/master/Security/xxs.md">XXS</a>
-  </ul>
-</details>
 
 
