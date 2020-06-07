@@ -28,6 +28,17 @@
   </ul>
 </details>
 <details open>
+  <summary><b>Java</b></summary>
+  <ul>
+    <ul>note
+      <li>abstract
+      <li>inherit_static
+      <li>inner_class
+      <li>interface
+      <li>lambda
+  </ul>
+</details>
+<details open>
   <summary><b>Design Patterns</b></summary>
   <ul>
     <li><a href="https://github.com/dryadd44651/Note/tree/master/DesignPatterns">DesignPatterns</a>
