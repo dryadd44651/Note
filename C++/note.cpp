@@ -1,5 +1,5 @@
 #include <stdio.h> 
-
+bool myfunction (int i,int j) { return (i<j); }
 int main() 
 { 
     //string
@@ -81,8 +81,9 @@ int main()
     //auto compare = [](int a,int b){return a>b;};
     sort(vec.begin(),vec.end(),[](int a,int b){return a>b;});
     for (int i=0; i<vec.size(); i++)
-        cout << ' ' << vec[i];
+        cout << vec[i]<<' ';
     cout<<endl;
+        
     
     //Double ended queue(linked list base)
     //list + vector = read,insert fast
@@ -90,8 +91,29 @@ int main()
     deque<int> mydeque = {10,20,30,5,15};
     sort(mydeque.begin(),mydeque.end());
     for (int i=0; i<mydeque.size(); i++)
-        cout << ' ' << mydeque[i];
-    
+        cout << mydeque[i]<<' ';
+    cout<<endl;
+    //set
+    std::set<int> myset;
+    myset.insert(1);
+    myset.insert(2);
+    myset.insert(3);
+    myset.insert(3);
+    for(auto i : myset)
+        cout<<i;
+    cout<<endl;
+    int myints1[] = {10,20,30,30,20,10,10,20};
+    std::vector<int> myvec(myints1,myints1+8);           // 10 20 30 30 20 10 10 20
+
+    std::sort (myvec.begin(), myvec.end());                // 10 10 10 20 20 20 30 30
+
+    std::vector<int>::iterator low,up;
+    low=std::lower_bound (myvec.begin(), myvec.end(), 20); //          ^
+    up= std::upper_bound (myvec.begin(), myvec.end(), 20); //                   ^
+    cout<<binary_search (myvec.begin(), myvec.end(), 20)<<endl;
+    std::cout << "lower_bound at position " << (low- myvec.begin()) << '\n';
+    std::cout << "upper_bound at position " << (up - myvec.begin()) << '\n';
+
 }
 
 
