@@ -10,18 +10,38 @@
 ## JavaScript
 - [OOP](https://github.com/dryadd44651/Note/blob/master/JavaScript/JS_OOP.pdf)
 ## Java
-- note
-- abstract
-- inherit_static
-- inner_class
-- interface
+- Note
+- Abstract
+- Inherit_static
+- Inner_class
+- Interface
 - lambda
-## Design Patterns
-- [DesignPatterns](https://github.com/dryadd44651/Note/tree/master/DesignPatterns)
 ## Python
 - [Thread_Sample](https://github.com/dryadd44651/Note/tree/master/Python/Thread_Sample)
 - [WeChatAPI](https://github.com/dryadd44651/Note/tree/master/Python/WeChatAPI)
 - [AdaBoost](https://github.com/dryadd44651/PythonAda)
+- kmean
+- note
+- Django_Demo
+## C++
+- note
+- ptr_ref
+- virtual_function
+## Front_End
+- ### React
+>>- React_Demo
+## common
+- Call by ref and ptr
+- Dynamic binding
+- Callback
+- Generics and template
+- Linked list
+- OOP
+- Operator overload
+- Copy
+> deep cpy/shallow copy
+## Design Patterns
+- [DesignPatterns](https://github.com/dryadd44651/Note/tree/master/DesignPatterns)
 ## Security
 - [XXS](https://github.com/dryadd44651/Note/blob/master/Security/xxs.md)
 
