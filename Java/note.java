@@ -1,4 +1,4 @@
-public class UsesEx{ 
+public class note{ 
     
 	public static void main(String[] args) { 
 		//String
@@ -119,7 +119,8 @@ public class UsesEx{
 //            System.out.print(me.getKey()+":"); 
 //            System.out.println(me.getValue()); 
 //         } 
-        Set<String> hash_Set = new HashSet<String>(); 
+        //set
+	Set<String> hash_Set = new HashSet<String>(); 
         hash_Set.add("Geeks"); 
         hash_Set.add("For"); 
         hash_Set.add("Geeks"); 
