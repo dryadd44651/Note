@@ -1,5 +1,3 @@
-# common usage
-```
 #string
 print('string')
 str = "123"
@@ -78,41 +76,26 @@ employees = [
 employees.sort(key=lambda x: x.get('Name'))
 print(employees, end='\n\n')
 
-```
-```
-string
-1234
-stack
-1
-queue
-3
-heap
-[1, 4, 2, 6, 5, 3, 7]
-1
-map
-{'one': 1, 'two': 2, 'three': 3}
-[] [11]
-0 1
-list
-[10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
-[11, 12, 13, 14, 15, 16, 17, 18]
-19
-5
-sort
-[19, 18, 17, 16, 15, 14, 13, 12, 11, 10]
-[19, 18, 17, 16, 15, 14, 13, 12, 11, 10]
-[(4, 1), (2, 2), (1, 3), (3, 4)]
-{'a': 9, 'b': 8, 'c': 7}
-[('a', 9), ('b', 8), ('c', 7)]
-[('c', 7), ('b', 8), ('a', 9)]
-['a', 'b', 'c']
-[7, 8, 9]
-[{'Name': 'Alan Turing', 'age': 25, 'salary': 10000}, {'Name': 'John Hopkins', 'age': 18, 'salary': 1000}, {'Name': 'Mikhail Tal', 'age': 40, 'salary': 15000}, {'Name': 'Sharon Lin', 'age': 30, 'salary': 8000}]
-```
+#bisect
+data = [('red', 5),('red2', 5), ('blue', 1), ('yellow', 8), ('black', 0)]
+data.sort(key=lambda r: r[1])
+keys = [r[1] for r in data]         # precomputed list of keys
+print(keys)
+print(bisect_left(keys, 5))
+print(bisect_right(keys, 5))
 
-## py to exe
-```
-pip install auto-py-to-exe
-auto-py-to-exe
-```
+#set
+set1 = {"apple", "banana", "cherry"}
+set1.add("orange")
+set1.remove("banana")
+print(set1)
+print(set1.union({1, 2, 3}))
+set1.update({'a','b','c'})
+print(set1)
+
+
+# py to exe
+//pip install auto-py-to-exe
+//auto-py-to-exe
+
 
