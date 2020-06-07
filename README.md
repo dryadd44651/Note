@@ -30,12 +30,12 @@
 <details open>
   <summary><b>Java</b></summary>
   <ul>
-    <ul>note
-      <li>abstract
-      <li>inherit_static
-      <li>inner_class
-      <li>interface
-      <li>lambda
+    <li>note
+    <li>abstract
+    <li>inherit_static
+    <li>inner_class
+    <li>interface
+    <li>lambda
   </ul>
 </details>
 <details open>
