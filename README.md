@@ -28,7 +28,7 @@
 - ptr_ref
 - virtual_function
 ## Front_End
-- ###React
+- ### React
 >>- React_Demo
 ## common
 - Call by ref and ptr
@@ -39,6 +39,7 @@
 - OOP
 - Operator overload
 - Copy
+>> deep cpy/shallow copy
 ## Design Patterns
 - [DesignPatterns](https://github.com/dryadd44651/Note/tree/master/DesignPatterns)
 ## Security
