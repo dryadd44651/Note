@@ -16,12 +16,31 @@
 - inner_class
 - interface
 - lambda
-## Design Patterns
-- [DesignPatterns](https://github.com/dryadd44651/Note/tree/master/DesignPatterns)
 ## Python
 - [Thread_Sample](https://github.com/dryadd44651/Note/tree/master/Python/Thread_Sample)
 - [WeChatAPI](https://github.com/dryadd44651/Note/tree/master/Python/WeChatAPI)
 - [AdaBoost](https://github.com/dryadd44651/PythonAda)
+- kmean
+- note
+- Django_Demo
+## C++
+- note
+- ptr_ref
+- virtual_function
+## Front_End
+- ###React
+>>- React_Demo
+## common
+- Call by ref and ptr
+- Dynamic binding
+- Callback
+- Generics and template
+- Linked list
+- OOP
+- Operator overload
+- Copy
+## Design Patterns
+- [DesignPatterns](https://github.com/dryadd44651/Note/tree/master/DesignPatterns)
 ## Security
 - [XXS](https://github.com/dryadd44651/Note/blob/master/Security/xxs.md)
 
