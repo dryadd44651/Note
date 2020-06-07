@@ -10,11 +10,11 @@
 ## JavaScript
 - [OOP](https://github.com/dryadd44651/Note/blob/master/JavaScript/JS_OOP.pdf)
 ## Java
-- note
-- abstract
-- inherit_static
-- inner_class
-- interface
+- Note
+- Abstract
+- Inherit_static
+- Inner_class
+- Interface
 - lambda
 ## Python
 - [Thread_Sample](https://github.com/dryadd44651/Note/tree/master/Python/Thread_Sample)
@@ -39,7 +39,7 @@
 - OOP
 - Operator overload
 - Copy
->> deep cpy/shallow copy
+> deep cpy/shallow copy
 ## Design Patterns
 - [DesignPatterns](https://github.com/dryadd44651/Note/tree/master/DesignPatterns)
 ## Security
