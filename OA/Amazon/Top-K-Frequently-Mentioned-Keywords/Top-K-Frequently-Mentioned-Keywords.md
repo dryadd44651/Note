@@ -1,11 +1,12 @@
-Given a list of reviews, a list of keywords and an integer k. Find the most popular k keywords in order of most to least frequently mentioned.
+Given a list of `reviews`, a list of `keywords` and an integer `k`.  Find the most popular `k` keywords in order of most to least frequently mentioned.
 
-The comparison of strings is case-insensitive.
-Multiple occurances of a keyword in a review should be considred as a single mention.
+The comparison of strings is case-insensitive.  
+Multiple occurances of a keyword in a review should be considred as a single mention.  
 If keywords are mentioned an equal number of times in reviews, sort alphabetically.
 
-Example 1:
+**Example 1:**
 
+```
 Input:
 k = 2
 keywords = ["anacell", "cetracular", "betacellular"]
@@ -20,8 +21,11 @@ Output:
 
 Explanation:
 "anacell" is occuring in 2 different reviews and "betacellular" is only occuring in 1 review.
-Example 2:
+```
 
+**Example 2:**
+
+```
 Input:
 k = 2
 keywords = ["anacell", "betacellular", "cetracular", "deltacellular", "eurocell"]
@@ -38,7 +42,11 @@ Output:
 
 Explanation:
 "betacellular" is occuring in 3 different reviews. "anacell" and "deltacellular" are occuring in 2 reviews, but "anacell" is lexicographically smaller.
+```
+
+---
+
 Related problems:
 
-https://leetcode.com/problems/top-k-frequent-words/
-https://leetcode.com/problems/top-k-frequent-elements/
+* https://leetcode.com/problems/top-k-frequent-words/
+* https://leetcode.com/problems/top-k-frequent-elements/
