@@ -1,52 +1,50 @@
-<h1>Note List</h1>
+# Note List
+
+## Computer vision
+- [Perspective_Projections](https://github.com/dryadd44651/Note/tree/master/Computer_vision/Perspective_Projections)
+## Script
+- [Docke](https://github.com/dryadd44651/Note/blob/master/Docker)
+## Statistics
+- [ANOVA](https://github.com/dryadd44651/Note/tree/master/Statistics/ANOVA)
+- [chi-squared-test](https://github.com/dryadd44651/Note/tree/master/Statistics/chi-squared-test)
+## JavaScript
+- [OOP](https://github.com/dryadd44651/Note/blob/master/JavaScript/JS_OOP.pdf)
+## Java
+- Note
+- Abstract
+- Inherit_static
+- Inner_class
+- Interface
+- lambda
+## Python
+- [Thread_Sample](https://github.com/dryadd44651/Note/tree/master/Python/Thread_Sample)
+- [WeChatAPI](https://github.com/dryadd44651/Note/tree/master/Python/WeChatAPI)
+- [AdaBoost](https://github.com/dryadd44651/PythonAda)
+- kmean
+- note
+- Django_Demo
+## C++
+- note
+- ptr_ref
+- virtual_function
+## Front_End
+- ### React
+>>- React_Demo
+## common
+- Call by ref and ptr
+- Dynamic binding
+- Callback
+- Generics and template
+- Linked list
+- OOP
+- Operator overload
+- Copy
+> deep cpy/shallow copy
+## Design Patterns
+- [DesignPatterns](https://github.com/dryadd44651/Note/tree/master/DesignPatterns)
+## Security
+- [XXS](https://github.com/dryadd44651/Note/blob/master/Security/xxs.md)
 
 
-<details open>
-  <summary><b>Computer vision</b></summary>
-  <ul>
-    <li><a href="https://github.com/dryadd44651/Note/tree/master/Computer_vision/Perspective_Projections">Perspective_Projections</a>
-  </ul>
-</details>
-<details open>
-  <summary><b>Script</b></summary>
-  <ul>
-    <li><a href="https://github.com/dryadd44651/Note/blob/master/Docker">Docker</a>
-  </ul>
-</details>
-<details open>
-  <summary><b>Statistics</b></summary>
-  <ul>
-    <li><a href="https://github.com/dryadd44651/Note/tree/master/Statistics/ANOVA">ANOVA</a>
-    <li><a href="https://github.com/dryadd44651/Note/tree/master/Statistics/chi-squared-test">chi-squared-test</a>
-    
-  </ul>
-</details>
-<details open>
-  <summary><b>JavaScript</b></summary>
-  <ul>
-    <li><a href="https://github.com/dryadd44651/Note/blob/master/JavaScript/JS_OOP.pdf">OOP</a>
-  </ul>
-</details>
-<details open>
-  <summary><b>Design Patterns</b></summary>
-  <ul>
-    <li><a href="https://github.com/dryadd44651/Note/tree/master/DesignPatterns">DesignPatterns</a>
-  </ul>
-</details>
-<details open>
-  <summary><b>Python</b></summary>
-  <ul>
-    <li><a href="https://github.com/dryadd44651/Note/tree/master/Python/Thread_Sample">Thread_Sample</a>
-    <li><a href="https://github.com/dryadd44651/Note/tree/master/Python/WeChatAPI">WeChatAPI</a>
-    <li><a href="https://github.com/dryadd44651/PythonAda">AdaBoost</a>
-      
-  </ul>
-</details>
-<details open>
-  <summary><b>Security</b></summary>
-  <ul>
-    <li><a href="https://github.com/dryadd44651/Note/blob/master/Security/xxs.md">XXS</a>
-  </ul>
-</details>
 
 
