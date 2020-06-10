@@ -126,8 +126,6 @@ int countLeaves(TreeNode* node){
 int count(TreeNode* node){
     if(!node)
         return 0;
-    if(!node->left && !node->right)
-        return 1;
     else
         return 1+count(node->left)+count(node->right);
 }
