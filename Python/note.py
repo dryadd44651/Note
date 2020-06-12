@@ -37,6 +37,8 @@ map['two'] =2
 map['three'] =3
 print(map)
 #very usful
+#with default value
+#defaultdict(lambda:float(inf))
 listMap = defaultdict(list) 
 listMap[1].append(11)
 print(listMap[0],listMap[1])
