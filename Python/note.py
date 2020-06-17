@@ -3,6 +3,7 @@ print('string')
 str = "123"
 str+="4"
 print(str)
+print(str[::-1])#reverse
 
 #stack
 print('stack')
