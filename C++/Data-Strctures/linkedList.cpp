@@ -90,7 +90,12 @@ class List {
             Node* tmp = maxNode(n->next);
             return (n->val > tmp->val)?n:tmp;
         }
-    
+        void reverse_show(Node *n){
+            if(!n)
+                return;
+            reverse_show(n->next);
+            cout<<n->val;
+        }
 };
 
 
@@ -107,6 +112,8 @@ int main() {
     list.insertAfter(list.head->next,8);
     //list.delNode(5);
     list.show();
+    list.reverse_show(list.head);
+    cout<<endl;
     //list.tail->next = list.head;
     //cout<<list.circle(list.head,list.head->next)<<endl;
     cout<<list.middle(list.head,list.head->next)->val<<endl;
