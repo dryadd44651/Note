@@ -80,17 +80,39 @@ class List {
             node->prev = NULL;
             delete node;
         }
-        void delNode(int val){
-            Node *curr = head;
-            while(curr){
-                if(curr->val == val){
-                    //cout<<curr->val<<endl;
-                    delNode(curr);
+//         void delNode(int val){
+//             Node *curr = head;
+//             while(curr){
+//                 if(curr->val == val){
+//                     //cout<<curr->val<<endl;
+//                     delNode(curr);
                     
-                    return;
-                }
-                curr = curr->next;
+//                     return;
+//                 }
+//                 curr = curr->next;
+//             }
+//         }
+        void delAllNode(Node *node,int val){
+            if(!node)
+                return;
+            delAllNode(node->next,val);
+            if(node->val == val){
+                        if(node==head){
+                head = head->next;
+                head->prev = NULL;
             }
+            else if(node==tail){
+                tail = tail->prev;
+                tail->next = NULL;
+            }
+            else{
+                node->prev->next = node->next;
+                node->next->prev = node->prev;
+            }
+            node->next = NULL;
+            node->prev = NULL;
+            delete node;
+            }    
         }
         bool equal(Node *node1,Node *node2){
             //Palindrome
@@ -132,7 +154,8 @@ int main() {
     listNode.insertAfter(2);
     listNode.insertAfter(1);
     listNode.insertAfter(listNode.head->next,8);
-    listNode.delNode(8);
+    listNode.delAllNode(listNode.head,1);
+    cout<<endl;
     listNode.show();
     listNode.reverse_show();
     //listNode.reverse_trav(listNode.tail);
