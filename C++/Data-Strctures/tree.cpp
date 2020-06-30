@@ -129,6 +129,25 @@ int count(TreeNode* node){
     else
         return 1+count(node->left)+count(node->right);
 }
+int large(TreeNode* node){
+    if(!node)
+        return NULL;
+    return max({large(node->left),large(node->right),node->val});
+}
+TreeNode* sibling(TreeNode* root,TreeNode* node){
+    if(!root)
+        return NULL;
+    if(root->left==node)
+        return root->right;
+    else if(root->right==node)
+        return root->left;
+    else{
+        TreeNode* left = sibling(root->left,node);
+        if(left)
+            return left;
+        return sibling(root->right,node);
+    }
+}
 TreeNode* parent(TreeNode* root, TreeNode* node){
     if(!root ||node==root)
         return NULL;
@@ -140,8 +159,23 @@ TreeNode* parent(TreeNode* root, TreeNode* node){
     else
         return parent(root->right,node);
 }
-
-TreeNode* mirror(TreeNode* root){
+int hight(TreeNode* node){
+    if((!node)||(!node->left && !node->right))
+        return 0;
+    else
+        return max(hight(node->left)+1,hight(node->right)+1);
+}
+int hight(TreeNode* root,TreeNode* node){
+    if((!root)||(!root->left && !root->right))
+        return 0;
+    else{
+        if(root==node)
+            return max(hight(root->left)+1,hight(root->right)+1);
+        else
+            return max(hight(root->left),hight(root->right));
+    }
+}
+TreeNode* mirror(TreeNode* root){//create new tree
     if(!root)
         return NULL;
     TreeNode* mroot = new TreeNode(root->val);
@@ -149,7 +183,7 @@ TreeNode* mirror(TreeNode* root){
     mroot->right = mirror(root->left);
     return mroot;
 }
-void mirror1(TreeNode* root){
+void mirror1(TreeNode* root){//modify the tree
     if(!root)
         return;
     TreeNode* tmp = root->right;
@@ -202,6 +236,10 @@ int main() {
     cout<<endl;
     cout<<"number leaves"<<countLeaves(root)<<endl;
     cout<<"number "<<count(root)<<endl;
+    cout<<"large "<<large(root)<<endl;
+    cout<<"val "<<root->left->right->val<<" sibling "<<sibling(root, root->left->right)->val<<endl;
+    cout<<"hiehgt "<<hight(root)<<endl;
+    cout<<"hiehgt "<<hight(root,root->left)<<endl;
     TreeNode* mroot = mirror(root);
     prettyPrintTree(mroot);
     mirror1(mroot);
