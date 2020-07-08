@@ -73,7 +73,9 @@ int main()
     for (auto it=mymap.begin(); it!=mymap.end(); ++it)
         std::cout << it->first << " => " << it->second << '\n';
     cout<<mymap['a']<<endl;
-
+    if(mymap.find('z')!=mymap.end()){
+            cout<<"z is in the mymap: "<< mymap['z']<<endl;
+    }
     //vector and sort
     //contiguosly store(array base), read fast, insert slow
     vector<int> vec = {10,20,30,5,15};
