@@ -46,6 +46,8 @@ print(listMap[0],listMap[1])
 intMap = defaultdict(int)
 intMap[1]+=1
 print(intMap[0],intMap[1])
+#create the specific map
+specMap = defaultdict(lambda :[0,0])
 
 #list operation
 print('list')
