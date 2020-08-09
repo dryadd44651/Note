@@ -79,19 +79,131 @@ from department
 group by id
 order by id
 ```
-#
+# Customers Who Never Order
+```
+Table: Customers.
+
++----+-------+
+| Id | Name  |
++----+-------+
+| 1  | Joe   |
+| 2  | Henry |
+| 3  | Sam   |
+| 4  | Max   |
++----+-------+
+Table: Orders.
+
++----+------------+
+| Id | CustomerId |
++----+------------+
+| 1  | 3          |
+| 2  | 1          |
++----+------------+
+Using the above tables as example, return the following:
+
++-----------+
+| Customers |
++-----------+
+| Henry     |
+| Max       |
++-----------+
+```
+```
+//Customers Who Order
+select Name from Customers join Orders on Orders.CustomerId = Customers.Id 
+//Customers Who Never Order
+select customers.name as 'Customers'
+from customers
+where customers.id not in
+(
+    select customerid from orders
+);
+```
+# Duplicate Emails
+```
+//use group by having count() (having = if)
+select Email
+from Person
+group by Email
+having count(Email) > 1;
+```
+# Delete Duplicate Emails
+```
+//full join p1,p2 select by condition
+DELETE p1 FROM Person p1,
+    Person p2
+WHERE
+    p1.Email = p2.Email AND p1.Id > p2.Id
+```
+# Rising Temperature
+```
+#Given a Weather table, write a SQL query to find all dates' Ids with higher temperature compared to its previous (yesterday's) dates.
+#The DATEDIFF() function returns a value of integer indicating the difference between the start_date and end_date 
+SELECT
+    weather.id AS 'Id'
+FROM
+    weather
+        JOIN
+    weather w ON DATEDIFF(weather.RecordDate, w.RecordDate) = 1
+    AND weather.Temperature > w.Temperature
+;
+```
+# Consecutive Available Seats
+```
+select distinct a.seat_id
+from cinema a join cinema b
+  on abs(a.seat_id - b.seat_id) = 1
+  and a.free = true and b.free = true
+order by a.seat_id
+;
+```
+# Friend Requests I: Overall Acceptance Rate
+```
+#distinct(sender_id | send_to_id) and distinct(requester_id | accepter_id ) 
+#request_accepted/friend_request
+select
+round(
+    ifnull(
+    (select count(*) from (select distinct requester_id, accepter_id from request_accepted) as A)
+    /
+    (select count(*) from (select distinct sender_id, send_to_id from friend_request) as B),
+    0)
+, 2) as accept_rate;
+```
+# Students With Invalid Departments
+```
+# find id not in table Departments
+select s.id,s.name from Students s
+    where department_id  not in 
+    (select id from Departments )
+;
+```
+# Triangle Judgement
+```
+| x  | y  | z  |
+|----|----|----|
+| 13 | 15 | 30 |
+| 10 | 20 | 15 |
+For the sample data above, your query should return the follow result:
+| x  | y  | z  | triangle |
+|----|----|----|----------|
+| 13 | 15 | 30 | No       |
+| 10 | 20 | 15 | Yes      |
+
+SELECT 
+    x,
+    y,
+    z,
+    CASE
+        WHEN x + y > z AND x + z > y AND y + z > x THEN 'Yes'
+        ELSE 'No'
+    END AS 'triangle'
+FROM
+    triangle
+;
+```
+# 
 ```
 
 ```
-#
-```
 
-```
-#
-```
-
-```
-#
-```
-
-```
