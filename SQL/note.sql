@@ -202,8 +202,56 @@ FROM
     triangle
 ;
 ```
+# Immediate Food Delivery I
+```
+select
+round(ifnull(
+    (select count(*) from Delivery where order_date = customer_pref_delivery_date )/
+    (select count(*) from Delivery)*100,0
+),2) as immediate_percentage ;
+
+select round(100 * sum(order_date = customer_pref_delivery_date) / count(*), 2) as immediate_percentage from Delivery;
+```
+# Sales Analysis II
+```
+select s.buyer_id FROM Sales AS s INNER JOIN Product AS p ON s.product_id = p.product_id
+GROUP BY s.buyer_id
+having
+SUM(CASE WHEN p.product_name = 'S8' THEN 1 ELSE 0 END) > 0
+and
+SUM(CASE WHEN p.product_name = 'iPhone' THEN 1 ELSE 0 END) = 0
+```
+# List the Products Ordered in a Period
+```
+select p.product_name,sum(o.unit) as UNIT from Orders as o inner join Products as p 
+on o.product_id = p.product_id
+where month(order_date) = 2 and year(order_date) = '2020'
+#where Left(order_date, 7) = '2020-02'
+group by o.product_id
+having sum(o.unit) >= 100
+```
+# User Activity for the Past 30 Days II
+```
+select ifnull(round(sum(x)/count(x),2),0) as average_sessions_per_user from
+(select count(DISTINCT  session_id ) as x from Activity
+where activity_date >= '2019-06-28' and activity_date <= '2019-07-27'
+group by user_id ) as t 
+```
 # 
 ```
 
 ```
+# 
+```
+
+```
+# 
+```
+
+```
+# 
+```
+
+```
+
 
