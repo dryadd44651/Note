@@ -1,5 +1,6 @@
 # Second Highest Salary
-```
+
+
 SELECT
     (SELECT DISTINCT
             Salary
@@ -8,17 +9,21 @@ SELECT
         ORDER BY Salary DESC
         LIMIT 1 OFFSET 1) AS SecondHighestSalary
 ;
-```
+
+
 # Combine Two Tables
-```
+
+
 select FirstName, LastName, City, State
     from Person left join Address
     on Person.PersonId = Address.PersonId;
-```
+
+
 # Employees Earning More Than Their Managers
-```
-//from a,b = a join b
-//use where as if
+
+
+# from a,b = a join b
+# use where as if
 SELECT
     a.Name AS 'Employee'
 FROM
@@ -28,18 +33,22 @@ WHERE
     a.ManagerId = b.Id
         AND a.Salary > b.Salary
 ;
-```
-```
-//use join on as if
+
+
+
+
+# use join on as if
 SELECT
      a.NAME AS Employee
 FROM Employee AS a JOIN Employee AS b
      ON a.ManagerId = b.Id
      AND a.Salary > b.Salary
 ;
-```
+
+
 # Reformat Department Table
-```
+
+
 Department table:
 +------+---------+-------+
 | id   | revenue | month |
@@ -59,9 +68,11 @@ Result table:
 | 2    | 9000        | null        | null        | ... | null        |
 | 3    | null        | 10000       | null        | ... | null        |
 +------+-------------+-------------+-------------+-----+-------------+
-```
-```
-// use group by with sum()
+
+
+
+
+# use group by with sum()
 select id, 
 	sum(case when month = 'jan' then revenue else null end) as Jan_Revenue,
 	sum(case when month = 'feb' then revenue else null end) as Feb_Revenue,
@@ -78,9 +89,11 @@ select id,
 from department
 group by id
 order by id
-```
+
+
 # Customers Who Never Order
-```
+
+
 Table: Customers.
 
 +----+-------+
@@ -107,9 +120,11 @@ Using the above tables as example, return the following:
 | Henry     |
 | Max       |
 +-----------+
-```
-```
-//Customers Who Order
+
+
+
+
+# Customers Who Order
 select Name from Customers join Orders on Orders.CustomerId = Customers.Id 
 //Customers Who Never Order
 select customers.name as 'Customers'
@@ -118,25 +133,31 @@ where customers.id not in
 (
     select customerid from orders
 );
-```
+
+
 # Duplicate Emails
-```
+
+
 //use group by having count() (having = if)
 select Email
 from Person
 group by Email
 having count(Email) > 1;
-```
+
+
 # Delete Duplicate Emails
-```
-//full join p1,p2 select by condition
+
+
+# full join p1,p2 select by condition
 DELETE p1 FROM Person p1,
     Person p2
 WHERE
     p1.Email = p2.Email AND p1.Id > p2.Id
-```
+
+
 # Rising Temperature
-```
+
+
 #Given a Weather table, write a SQL query to find all dates' Ids with higher temperature compared to its previous (yesterday's) dates.
 #The DATEDIFF() function returns a value of integer indicating the difference between the start_date and end_date 
 SELECT
@@ -147,18 +168,22 @@ FROM
     weather w ON DATEDIFF(weather.RecordDate, w.RecordDate) = 1
     AND weather.Temperature > w.Temperature
 ;
-```
+
+
 # Consecutive Available Seats
-```
+
+
 select distinct a.seat_id
 from cinema a join cinema b
   on abs(a.seat_id - b.seat_id) = 1
   and a.free = true and b.free = true
 order by a.seat_id
 ;
-```
+
+
 # Friend Requests I: Overall Acceptance Rate
-```
+
+
 #distinct(sender_id | send_to_id) and distinct(requester_id | accepter_id ) 
 #request_accepted/friend_request
 select
@@ -169,17 +194,21 @@ round(
     (select count(*) from (select distinct sender_id, send_to_id from friend_request) as B),
     0)
 , 2) as accept_rate;
-```
+
+
 # Students With Invalid Departments
-```
+
+
 # find id not in table Departments
 select s.id,s.name from Students s
     where department_id  not in 
     (select id from Departments )
 ;
-```
+
+
 # Triangle Judgement
-```
+
+
 | x  | y  | z  |
 |----|----|----|
 | 13 | 15 | 30 |
@@ -201,9 +230,11 @@ SELECT
 FROM
     triangle
 ;
-```
+
+
 # Immediate Food Delivery I
-```
+
+
 select
 round(ifnull(
     (select count(*) from Delivery where order_date = customer_pref_delivery_date )/
@@ -211,47 +242,71 @@ round(ifnull(
 ),2) as immediate_percentage ;
 
 select round(100 * sum(order_date = customer_pref_delivery_date) / count(*), 2) as immediate_percentage from Delivery;
-```
+
+
 # Sales Analysis II
-```
+
+
 select s.buyer_id FROM Sales AS s INNER JOIN Product AS p ON s.product_id = p.product_id
 GROUP BY s.buyer_id
 having
 SUM(CASE WHEN p.product_name = 'S8' THEN 1 ELSE 0 END) > 0
 and
 SUM(CASE WHEN p.product_name = 'iPhone' THEN 1 ELSE 0 END) = 0
-```
+
+
 # List the Products Ordered in a Period
-```
+
+
 select p.product_name,sum(o.unit) as UNIT from Orders as o inner join Products as p 
 on o.product_id = p.product_id
 where month(order_date) = 2 and year(order_date) = '2020'
 #where Left(order_date, 7) = '2020-02'
 group by o.product_id
 having sum(o.unit) >= 100
-```
+
+
 # User Activity for the Past 30 Days II
-```
+
+
 select ifnull(round(sum(x)/count(x),2),0) as average_sessions_per_user from
 (select count(DISTINCT  session_id ) as x from Activity
 where activity_date >= '2019-06-28' and activity_date <= '2019-07-27'
 group by user_id ) as t 
-```
-# 
-```
-
-```
-# 
-```
-
-```
-# 
-```
-
-```
-# 
-```
-
-```
 
 
+# Average Selling Price
+
+select x.product_id, round(sum(x.price*x.units)/sum(x.units),2) as average_price from
+(select p.product_id,p.price,u.units from
+Prices as p join UnitsSold as u on p.product_id = u.product_id
+and u.purchase_date between p.start_date and p.end_date) as x
+group by product_id
+
+
+# Swap Salary(Sex)
+
+UPDATE salary SET sex = CASE sex WHEN 'm' THEN 'f' ELSE 'm' END;
+#update salary set sex = IF (sex = "m", "f", "m");
+
+
+# Find Customer Referee
+#select name from customer where referee_id <> 2 OR referee_id IS NULL
+select name from customer where referee_id != 2 OR referee_id IS NULL
+
+# Actors and Directors Who Cooperated At Least Three Times
+select actor_id, director_id from ActorDirector 
+group by actor_id, director_id
+having count(*)>=3
+
+# Customer Placing the Largest Number of Orders
+
+select customer_number from orders group by customer_number 
+order by count(*) desc limit 1
+
+# Find the Team Size
+
+select e.employee_id,x.team_size from
+Employee as e join
+(select team_id,count(*) as team_size from Employee group by team_id) as x 
+on e.team_id = x.team_id	
