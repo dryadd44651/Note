@@ -314,7 +314,7 @@ on e.team_id = x.team_id
 # Classes More Than 5 Students
 select class from
 (select DISTINCT * from courses) as x
-group by  class having count(*)>=5
+group by class having count(*)>=5
 
 # Shortest Distance in a Line
 select min(abs(p1.x-p2.x)) as shortest from 
@@ -327,10 +327,30 @@ select max(num) as num from
 # Patients With a Condition
 select * from Sales where sale_date between '2019-01-01' and '2019-03-31'
 	       
-# 
-# 
-# 
-# 
-# 
+# Replace Employee ID With The Unique Identifier
+select u.unique_id,e.name from Employees as e left join EmployeeUNI as u on e.id = u.id
+	       
+# Group Sold Products By The Date
+# group_concat => item1,item2,item3...
+select sell_date, count(distinct product) as num_sold , 
+group_concat(distinct product order by product asc separator ',') as products               
+from activities  
+group by sell_date
+order by sell_date
+	       
+# Product Sales Analysis I
+select p.product_name,s.year,s.price 
+from Sales s join Product p on s.product_id = p.product_id
+# Friendly Movies Streamed Last Month
+select distinct title from TVProgram t join Content c 
+on t.content_id=c.content_id
+where Kids_content = 'Y' and (t.program_date BETWEEN '2020-06-1' AND '2020-06-30')
+and c.content_type = "Movies"
+	       
+#  All People Report to the Given Manager
+select e1.employee_id,e1.employee_name,e1.manager_id,e2.manager_id
+from Employees e1 join Employees e2 on e1.manager_id = e2.employee_id
+join Employees e3 on e2.manager_id = e3.employee_id
+WHERE e3.manager_id = 1 AND e1.employee_id != 1
 # 
 # 
