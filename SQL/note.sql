@@ -309,4 +309,28 @@ order by count(*) desc limit 1
 select e.employee_id,x.team_size from
 Employee as e join
 (select team_id,count(*) as team_size from Employee group by team_id) as x 
-on e.team_id = x.team_id	
+on e.team_id = x.team_id
+
+# Classes More Than 5 Students
+select class from
+(select DISTINCT * from courses) as x
+group by  class having count(*)>=5
+
+# Shortest Distance in a Line
+select min(abs(p1.x-p2.x)) as shortest from 
+point as p1 join point as p2 on p1.x != p2.x
+
+# Biggest Single Number (only appears once)
+select max(num) as num from
+(select num from my_numbers group by num having count(*)=1) as x
+
+# Patients With a Condition
+select * from Sales where sale_date between '2019-01-01' and '2019-03-31'
+	       
+# 
+# 
+# 
+# 
+# 
+# 
+# 
