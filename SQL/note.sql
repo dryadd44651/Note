@@ -384,3 +384,9 @@ group by e.DepartmentId) as x where x.Salary = e.Salary and x.id = e.DepartmentI
 select s1.id,COALESCE(s2.student, s1.student) student
 from seat as s1 left join seat as s2 on s1.id = s2.id + mod(s2.id,2)*2-1 
 order by s1.id asc
+
+# Consecutive Numbers
+select distinct l1.Num ConsecutiveNums from Logs as l1 
+join Logs as l2 on l1.id=l2.id+1
+join Logs as l3 on l2.id=l3.id+1
+where l1.Num = l2.Num and l2.Num = l3.Num
