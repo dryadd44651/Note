@@ -347,10 +347,40 @@ on t.content_id=c.content_id
 where Kids_content = 'Y' and (t.program_date BETWEEN '2020-06-1' AND '2020-06-30')
 and c.content_type = "Movies"
 	       
-#  All People Report to the Given Manager
+#  All People Report to the Given Manager (Boss)
 select e1.employee_id,e1.employee_name,e1.manager_id,e2.manager_id
 from Employees e1 join Employees e2 on e1.manager_id = e2.employee_id
 join Employees e3 on e2.manager_id = e3.employee_id
 WHERE e3.manager_id = 1 AND e1.employee_id != 1
-# 
-# 
+
+# Nth Highest Salary (sql function)
+CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
+BEGIN
+DECLARE M INT;
+SET M=N-1;
+  RETURN (
+      # Write your MySQL query statement below.
+      select distinct Salary as getNthHighestSalary from Employee
+      ORDER BY Salary DESC
+      LIMIT 1 OFFSET M
+  );
+END
+# Rank Scores
+SELECT
+  Score,
+  (select count(*) from (select distinct Score as s from Scores) tmp where Score<=s) as 'Rank'
+FROM
+  Scores
+ORDER BY Score desc
+
+# Department Highest Salary
+select  x.Name Department,e.Name Employee,e.Salary Salary from
+Employee as e,
+(select d.id, Max(e.Salary) as Salary,d.Name from 
+Employee as e join Department as d on e.DepartmentId = d.id
+group by e.DepartmentId) as x where x.Salary = e.Salary and x.id = e.DepartmentId
+
+# Exchange Seats (COALESCE get val until exit)
+select s1.id,COALESCE(s2.student, s1.student) student
+from seat as s1 left join seat as s2 on s1.id = s2.id + mod(s2.id,2)*2-1 
+order by s1.id asc
