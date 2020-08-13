@@ -405,17 +405,18 @@ order by num_points desc, t.team_id ASC;
 # Reported Posts II (good practice)
 
 # get the averag daily percent
-select round(sum(y.daily_percent)*100/count(y.daily_percent),2) as average_daily_percent from
-#get the daily percent
-(select (sum(x.c)/count(x.c)) as daily_percent from
-
-#distinct:remove duplicate
-#get only spam
-#check is removed or not (if(a.post_id = r.post_id,1,0))
-(select distinct a.action_date,a.post_id,if(a.post_id = r.post_id,1,0) as c
-from Actions as a
-left join Removals as r
-on a.post_id = r.post_id
-where a.extra = 'spam') x
-
+select round(sum(y.daily_percent)*100/count(y.daily_percent),2) as average_daily_percent 
+    from
+    #get the daily percent
+    (select (sum(x.c)/count(x.c)) as daily_percent 
+        from
+        #distinct:remove duplicate
+        #get only spam
+        #check is removed or not (if(a.post_id = r.post_id,1,0))
+        (select distinct a.action_date,a.post_id,if(a.post_id = r.post_id,1,0) as c
+            from Actions as a
+            left join Removals as r
+            on a.post_id = r.post_id
+            where a.extra = 'spam') x
+     
 group by x.action_date) as y
