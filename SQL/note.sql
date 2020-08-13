@@ -390,3 +390,24 @@ select distinct l1.Num ConsecutiveNums from Logs as l1
 join Logs as l2 on l1.id=l2.id+1
 join Logs as l3 on l2.id=l3.id+1
 where l1.Num = l2.Num and l2.Num = l3.Num
+
+# Team Scores in Football Tournament (good)
+select t.team_id, t.team_name,
+sum(if(t.team_id = m.host_team and host_goals>guest_goals,3,0)+
+if(t.team_id = m.host_team and host_goals=guest_goals,1,0)+
+if(t.team_id = m.guest_team and guest_goals>host_goals,3,0)+
+if(t.team_id = m.guest_team and guest_goals=host_goals,1,0)) num_points
+from Teams t left join Matches m
+on t.team_id = m.host_team or t.team_id = m.guest_team
+group by t.team_id
+order by num_points desc, t.team_id ASC;
+
+# Reported Posts II (good practice)
+select round(sum(y.daily_percent)*100/count(y.daily_percent),2) as average_daily_percent from
+(select (sum(x.c)/count(x.c)) as daily_percent from
+(select distinct a.action_date,a.post_id,if(a.post_id = r.post_id,1,0) as c
+from Actions as a
+left join Removals as r
+on a.post_id = r.post_id
+where a.extra = 'spam') x
+group by x.action_date) as y
