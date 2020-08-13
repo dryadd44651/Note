@@ -420,3 +420,14 @@ select round(sum(y.daily_percent)*100/count(y.daily_percent),2) as average_daily
             where a.extra = 'spam') x
      
 group by x.action_date) as y
+
+# Unpopular Books
+select b.book_id,b.name 
+    from
+        (select book_id,name from Books where available_from<'2019-05-23') as b
+    left join
+        (select book_id,sum(quantity) as quantity from Orders 
+        where dispatch_date between '2018-06-23' and '2019-06-23'
+        group by book_id) as o
+    on b.book_id=o.book_id
+    where o.quantity<10 or o.quantity is null
