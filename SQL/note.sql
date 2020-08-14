@@ -452,3 +452,28 @@ select dep.pay_month,dep.department_id,
         (select avg(amount) average, date_format(s.pay_date, '%Y-%m') pay_month 
          from salary s group by date_format(s.pay_date, '%Y-%m')) com
     on dep.pay_month = com.pay_month
+
+# Trips and Users
+select request_at as Day,
+       round(sum(case when status = 'completed' then 0 else 1 end)/count(id),2) as "Cancellation Rate"
+from trips t
+
+inner join users c
+    on c.users_id = t.client_id
+    and c.banned = 'No'
+    and c.role = 'client'
+inner join users d
+    on d.users_id = t.driver_id
+    and d.banned = 'No'
+    and d.role = 'driver'
+where (t.Request_at between '2013-10-01' and '2013-10-03')
+group by t.request_at
+
+# Department Top Three Salaries (select in where)
+select d.name Department,e.name Employee,e.Salary Salary
+from Employee e join Department d
+	on e.DepartmentId=d.id
+	where 3>
+		(select count(distinct salary) from Employee e1
+		where e1.salary>e.salary
+		and e.DepartmentId = e1.DepartmentId)
