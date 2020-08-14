@@ -431,3 +431,24 @@ select b.book_id,b.name
         group by book_id) as o
     on b.book_id=o.book_id
     where o.quantity<10 or o.quantity is null
+
+# Capital Gain/Loss
+select stock_name,sum(if(operation='Buy',-price,price)) capital_gain_loss
+from Stocks as s
+group by stock_name
+			 
+# Average Salary: Departments VS Company
+select dep.pay_month,dep.department_id,
+    case 
+        when dep.amount>com.average then 'higher'
+        when dep.amount<com.average then 'lower'
+        else 'same'
+        end comparison
+    from
+        (select date_format(s.pay_date, '%Y-%m') pay_month,e.department_id,avg(s.amount) amount
+        from salary s join employee e on s.employee_id=e.employee_id
+        group by e.department_id,pay_month) dep
+    left join
+        (select avg(amount) average, date_format(s.pay_date, '%Y-%m') pay_month 
+         from salary s group by date_format(s.pay_date, '%Y-%m')) com
+    on dep.pay_month = com.pay_month
