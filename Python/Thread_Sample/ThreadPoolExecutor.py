@@ -18,3 +18,9 @@ if __name__ == '__main__':
     main()
 # task3 come first, but task1 print first
 # task0 print after task1, because of the number of thread
+# 0
+# True
+# 1
+# 2
+# True
+# 3
