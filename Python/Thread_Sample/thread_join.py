@@ -17,5 +17,14 @@ thread_2 = threading.Thread(target=T2_job, name='T2')
 thread_1.start()
 thread_2.start()
 thread_2.join()
-#thread_2 join -> thread_2 the main thread will wait until thread_2 finish
+#thread_2 join the main thread (main thread will wait until thread_2 finish) 
 print("all done\n")
+# T1 start
+
+# T2 start
+
+# T2 finish
+
+# all done
+
+# T1 finish
