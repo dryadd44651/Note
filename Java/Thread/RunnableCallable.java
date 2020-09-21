@@ -66,3 +66,21 @@ public class Main {
         // tc.join();
     }
 }
+
+
+// Callable: 0
+// Callable: 1
+// Callable: 2
+// Callable: 3
+// Callable: 4
+// result: 5
+// Thread: 0
+// Runnable: 0
+// Thread: 1
+// Runnable: 1
+// Thread: 2
+// Runnable: 2
+// Thread: 3
+// Runnable: 3
+// Thread: 4
+// Runnable: 4
