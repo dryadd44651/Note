@@ -55,3 +55,6 @@ yong generation->garbage collection frequently
 old generation->garbage collection not frequently
 Permanent generation->garbage collection rarely
 
+## threadpool
+control thread numbers
+reuse threads(reduce creating thread)
