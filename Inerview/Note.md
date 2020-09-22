@@ -22,3 +22,8 @@ one tap crash won't effect another
 animal: run()
 dog, cat, elephant inherit animal
 They all run different ways.
+
+## Synchronization
+when: shared data (critical section)
+con: synchroized-> sequential
+
