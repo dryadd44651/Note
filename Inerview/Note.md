@@ -2,7 +2,7 @@
 
 ## Iterator
 > two features: hasNext(), next()
-> pros: we don't need to care the data strcture (vector, list, hashtable...)
+> pros: we don't need to care the data strcture (vector, list, hashtable...), lazy load(don't need to load all data into memory)
 
 ## Process vs Thread
 
