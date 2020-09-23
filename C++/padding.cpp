@@ -37,3 +37,5 @@ int main(){
     cout << (void *)&t3.c <<" "<<(void *)&t3.s << "\n"; //0x7ffc4abb8764 0x7ffc4abb8765
     return 0; 
 } 
+//https://www.geeksforgeeks.org/data-structure-alignment/
+//https://stackoverflow.com/questions/4860788/why-is-address-of-char-data-not-displayed
