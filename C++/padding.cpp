@@ -14,14 +14,14 @@ struct test1{
 struct test2{ 
     int i;  //4                    |iiii|
     char c; //4+1 = 5 padding -> 8 |iiii|c---|
-    short s;//5+2 = 7 padding -> 8 |iiii|c-ss|
+    short s;//5+2 = 7 padding -> 8 |iiii|c-ss| (packing char and short)
     //char s;
 }; 
 
 struct test3{ 
     int i;  //4                    |iiii|
     char c; //4+1 = 5 padding -> 8 |iiii|c---|
-    char s; //4+1 = 5 padding -> 8 |iiii|cs--|
+    char s; //4+1 = 5 padding -> 8 |iiii|cs--| (packing two char)
 }; 
 
 int main(){ 
