@@ -44,6 +44,7 @@ int main(int argc, char* argv[])
 //use the virtual class to avoid multiple inheritances
 //GrandChild fucntion1 will inherit from child1 (child is virtual from the parent)
 //we still need to avoid child and child1 having the same function!
+//priority: virtual<instance
 
 //This is parent,function1
 //This is Child1,function1
