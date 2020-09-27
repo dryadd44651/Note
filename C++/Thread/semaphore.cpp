@@ -10,7 +10,7 @@ std::condition_variable  cv;
 
 void run (int i) {
     bool wait = false;
-    {unique_lock<mutex> lk(mtx);
+    {unique_lock<mutex> lk(mtx);//critical section
         if(nums==0){
             wait = true;
             
