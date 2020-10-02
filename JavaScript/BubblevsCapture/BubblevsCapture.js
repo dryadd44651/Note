@@ -64,7 +64,8 @@ document.querySelector('.box-3').addEventListener(
     },
     true
 );
-
+//bubbling: inner->outer
+//capture: outer->inner
 //"Box-1 is clicked"
 //"Box-2 is clicked"
 //"Box-3 is clicked"
