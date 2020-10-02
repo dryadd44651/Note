@@ -1,0 +1,35 @@
+        .box {
+            font-size: 1.5rem;
+        }
+
+        .box-1 {
+            width: 600px;
+            height: 600px;
+            background-color: orangered;
+            outline: 5px dashed grey;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+        }
+
+        .box-2 {
+            width: 400px;
+            height: 400px;
+            background-color: #247BA0;
+            outline: 5px dashed #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+        }
+
+        .box-3 {
+            width: 200px;
+            height: 200px;
+            background-color: #8F3985;
+            outline: 5px dashed #fff;
+            text-align: center;
+        }
