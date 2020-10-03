@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script src="xml2json.js"> </script>
+<script>
+function loadDoc() {
+  $.ajax({
+
+		 url: "json.json",
+		 dataType: "json",
+		 success: function(data) {
+			//console.log(data);
+			$("table").append('<tr><td>Artist</td><td>Title</td></tr>');
+			
+			var cd = data["CATALOG"]["CD"];
+			for (idx in cd) {
+				//console.log(cd[idx]);
+				var info = '<tr><td>' + cd[idx]["ARTIST"] +'</td><td>' +  cd[idx]["TITLE"] + '</td></tr>';
+				$("table").append(info);
+			}
+		 },
+		 error: function() { alert("error loading file");  }
+     });
+	
+}
+</script>
+
+
+
+
+<style>
+	table,th,td {
+	  border : 1px solid black;
+	  border-collapse: collapse;
+	}
+	th,td {
+	  padding: 5px;
+	}
+</style>
+
+</head>
+
+
+<body>
+
+<h1>AJAX-JQuery Example</h1>
+
+<button type="button" onclick="loadDoc()">Get my CD collection</button>
+<br><br>
+<table id="demo"></table>
+
+
+
+</body>
+</html>
