@@ -62,4 +62,63 @@ print(list(map(lambda x: 'ten' if x == 10 else x, arr)))
 ```
 # Java
 ```
+// "static void main" must be defined in a public class.
+public class Main {
+    public static void main(String[] args) {
+        String txt = "Please locate where 'locate' occurs!";
+        System.out.println(txt.indexOf("locate")); // Outputs 7
+        txt = "We are the so-called \"Vikings\" from the north.";
+        String myStr = "Hello";
+        System.out.println(myStr.contains("Hel"));   // true
+        System.out.println(myStr.contains("e"));     // true
+        System.out.println(myStr.contains("Hi"));    // false
+        //Find the first occurrence of the letter "e" in a string, starting the search at position 5:
+        myStr = "Hello planet earth, you are a great planet.";
+        System.out.println(myStr.indexOf("e", 5));
+        //Return a new string where all "l" characters are replaced with "p" characters:
+        myStr = "Hello";
+        System.out.println(myStr.replace('l', 'p'));
+        myStr = "Hello";
+        System.out.println(myStr.replaceAll("l", "p"));
+        myStr = "Hello";
+        System.out.println(myStr.replaceFirst("l", "p"));
+        String str = "geekss@for@geekss"; 
+        String[] arrOfStr = str.split("@", 3); 
+  
+        for (String a : arrOfStr) 
+            System.out.println(a); 
+        
+        str= new String("quick brown fox jumps over the lazy dog");
+        System.out.println("Substring starting from index 15:");
+        System.out.println(str.substring(15));
+        System.out.println("Substring starting from index 15 and ending at 20:");
+        System.out.println(str.substring(15, 20));
+        
+        
+        ArrayList<Integer> myNumbers = new ArrayList<Integer>();
+        myNumbers.add(33);
+        myNumbers.add(15);
+        myNumbers.add(20);
+        myNumbers.add(34);
+        myNumbers.add(8);
+        myNumbers.add(12);
+
+        Collections.sort(myNumbers);  // Sort myNumbers
+
+        for (int i : myNumbers)
+            System.out.println(i);
+        System.out.println("sub");
+        ArrayList<Integer> sub = new ArrayList<Integer>(myNumbers.subList(2, 4)); 
+        for (int i : sub)
+            System.out.println(i);
+        System.out.println("------");
+        myNumbers.set(0,-1);
+        System.out.println(myNumbers.get(0));
+        myNumbers.remove(0);
+        System.out.println(myNumbers.get(0));
+        System.out.println(myNumbers.contains(10));
+        System.out.println(myNumbers.indexOf(20));
+        
+    }
+}
 ```
