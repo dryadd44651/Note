@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$("#preview").css({'position': 'absolute'});
+	var largerp=$("<img src='https://i.insider.com/5484d9d1eab8ea3017b17e29?width=1100&format=jpeg&auto=webp'/>");
+	$("#preview").append(largerp);
+	$("#preview").hide();
+	$("#obj").on("mouseenter","img",function(event){
+		$("h1").text("in");
+		$("h1").css({"color":"red"});
+	});
+
+	$("#obj").on("mouseleave","img",function(event){
+		$("#preview").hide();
+		$("h1").text("out");
+	});
+
+	$("#obj").on("mousemove","img",function(event){
+		var x=event.pageX;
+		var y=event.pageY;
+		$("#preview").css({'left':x+20,'top':y-50});
+		$("#preview").show();
+		$("h1").text(x+" "+y);
+	});
+});
+</script>
+</head>
+<body>
+<h1>dog</h1>
+<li id = 'obj'>
+cute
+<img  src='https://media.nbcsandiego.com/2019/09/sad-puppy.jpg?fit=506%2C337'/>
+</li>
+<div id='preview'></div>
+</body>
+</html>
