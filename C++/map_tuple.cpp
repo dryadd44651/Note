@@ -1,4 +1,5 @@
 int main() {
+    //number of tuple can be 2~n
     // auto r1 = make_tuple(3.8, 'A', "Lisa Simpson");
     // auto r2 = make_tuple(2.9, 'C', "Milhouse Van Houten");
     tuple<double,char,string> r3 = {1.7, 'D', "Ralph Wiggum"};
