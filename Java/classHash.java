@@ -15,7 +15,7 @@ public class Main {
             System.out.println(entry);
         ArrayList<Integer> a = new ArrayList<Integer>(
             List.of(1, 2, 3));
-        //get num (hm store the (ArrayList)arrlist.clone() hash value)
+        //get num (hm store the (ArrayList)arrlist.clone() address hash value)
         System.out.println(hm.get(hm.get(a)));
         
         
