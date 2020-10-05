@@ -42,6 +42,26 @@ class IntWrapper {
     public IntWrapper(int val){ this.val = val;}
 }
 ```
+```
+public class Main {
+    static void callbyref(ArrayList<Integer> a){
+        a.set(0,a.get(0)+1);
+        System.out.println(a.get(0));
+    }
+    public static void main(String[] args) {
+        ArrayList<Integer> arrlist = new ArrayList<Integer>(); 
+        arrlist.add(0);
+        callbyref(arrlist);
+        System.out.println(arrlist.get(0));
+        //1
+        //1
+        
+        
+    }
+}
+
+```
+
 # python
 ```
 class intWrapper:
