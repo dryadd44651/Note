@@ -14,6 +14,6 @@ int main()
 	// x is implicitly converted to float 
 	float z = x + 1.0; 
 
-	printf("x = %d, z = %f", x, z); 
+	printf("x = %d, z = %f", x, z); //x = 107, z = 108.000000
 	return 0; 
 } 
