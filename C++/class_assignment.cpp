@@ -28,6 +28,9 @@ class derived1: public base1 {
 }; 
 int main(void) 
 { 
+    //just like variable pointer
+    //using reference & can also acheieve this result
+    //declare as base(use base to express) (declare as int use int to express)
     derived *d = new derived();   
     base *b = d;
     d->f();//derived
