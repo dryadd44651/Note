@@ -1,3 +1,4 @@
+//dangling pointer can be sloved by smart pointer
 int * get_dangling_pointer()
 {
     int num = 1234;
