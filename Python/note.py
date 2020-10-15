@@ -37,6 +37,8 @@ map['one'] =1
 map['two'] =2
 map['three'] =3
 print(map)
+#get first element from map
+print(next(iter(map)))
 #very usful
 #with default value
 #defaultdict(lambda:float(inf))
