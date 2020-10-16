@@ -28,3 +28,7 @@ print("all done\n")
 # all done
 
 # T1 finish
+
+# import threading
+# command = lambda a : print(a)
+# threading.Thread(target=command(10)).start()
