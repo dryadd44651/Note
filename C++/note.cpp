@@ -73,6 +73,10 @@ int main()
     for (auto it=mymap.begin(); it!=mymap.end(); ++it)
         std::cout << it->first << " => " << it->second << '\n';
     cout<<mymap['a']<<endl;
+    
+    for(auto m:mymap)
+        cout<<mymap.second<<endl;
+    
     if(mymap.find('z')!=mymap.end()){
             cout<<"z is in the mymap: "<< mymap['z']<<endl;
     }
