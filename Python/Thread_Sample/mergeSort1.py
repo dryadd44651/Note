@@ -1,11 +1,8 @@
 from concurrent.futures import ThreadPoolExecutor
 import threading
 from time import sleep
-# executor = ThreadPoolExecutor(max_workers=2)
-# a = executor.submit(wait_on_a)
-# b = executor.submit(wait_on_b))
-# print(a.result())
-# print(b.result())
+import random
+import timeit
 
 
 def merge(a,b):
@@ -31,22 +28,33 @@ def check():
         if arr[i]<arr[i-1]:
             return False
     return True
-arr = [randrange(1000) for i in range(200000)]
+arr = [random.randrange(1000) for i in range(200000)]
+#normal merge sort
 #arr = divide(arr)
+
+#python sort
 size = len(arr)
 a = arr[:size//2]
 b = arr[size//2:]
 executor = ThreadPoolExecutor(max_workers=2)
-# a = executor.submit(sorted,a)
-# b = executor.submit(sorted,b)
+start = timeit.default_timer()
 
-# arr = merge(a.result(),b.result())
+#two threads
+a = executor.submit(sorted,a)
+b = executor.submit(sorted,b)
+arr = merge(a.result(),b.result())
 
-arr = merge(sorted(arr[:size//2]),sorted(arr[size//2:]))
+#one threads
+#arr = merge(sorted(arr[:size//2]),sorted(arr[size//2:]))
+
+stop = timeit.default_timer()
+
+print('Time: ', stop - start)
 print(check())
 
-# Finished in 1648 ms one thread
-# Finished in 1584 ms 2 thread
+#only in very big amount of data, one thread would faster then 2 threads
+# Time:  56.069326399999994 one thread
+# Time:  31.3775233 2 threads
 
 # t = threading.Thread(target=divide,args=(arr,))
 # t.start()
