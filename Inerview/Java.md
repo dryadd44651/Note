@@ -21,14 +21,14 @@ https://www.geeksforgeeks.org/difference-between-throw-and-throws-in-java/
 > finally: in try/catch block and guarantees that a section of code will be executed, even if an exception is thrown.
 
 > finalize: similar to(destructor in C++), but finalize only execute in Garbage Collection
-···
+```
 Bye m = new Bye(); 
 // Calling finalize method Explicitly. 
 m.finalize(); 
 m = null; 
 // Requesting JVM to call Garbage Collector method 
 System.gc(); 
-···
+```
 
 https://www.geeksforgeeks.org/difference-between-throw-and-throws-in-java/
 ## throw vs throws
