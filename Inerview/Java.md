@@ -7,8 +7,8 @@
 
 > StringBuffer: mutable, thread safe
 
+https://www.geeksforgeeks.org/string-vs-stringbuilder-vs-stringbuffer-in-java/
 
-https://www.geeksforgeeks.org/difference-between-throw-and-throws-in-java/
 
 ## final vs finally vs finalize
 ### final
@@ -29,8 +29,7 @@ m = null;
 // Requesting JVM to call Garbage Collector method 
 System.gc(); 
 ```
-
-https://www.geeksforgeeks.org/difference-between-throw-and-throws-in-java/
+https://www.geeksforgeeks.org/g-fact-24-finalfinally-and-finalize-in-java/
 ## throw vs throws
 > throw the exception manually
 
@@ -42,3 +41,4 @@ void Demo() throws ArithmeticException, NullPointerException
 throw new ArithmeticException(); 
 } 
 ```
+https://www.geeksforgeeks.org/difference-between-throw-and-throws-in-java/
