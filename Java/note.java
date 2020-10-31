@@ -111,6 +111,7 @@ public class note{
         System.out.println(hm.get("a"));
         for (Map.Entry< String,Integer> entry : hm.entrySet())
             System.out.println(entry);
+	hm.containsKey(100);
          // Returns Set view      
 //         Set< Map.Entry< String,Integer> > st = hm.entrySet();    
 
