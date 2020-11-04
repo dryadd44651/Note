@@ -1,3 +1,13 @@
+# query: a single statement (typically one of SELECT, INSERT, UPDATE or DELETE)
+# transaction: a group of statements
+# transaction need to be ACID
+# Atomicity (all statements in the transaction are executed, or none)
+# Consistency (the database is never viewable in an inconsistent state)
+# Isolation (a transaction does not affect other transactions)
+# Durable (once committed, the changes in the transaction are permanent)
+
+
+
 # Second Highest Salary
 
 
