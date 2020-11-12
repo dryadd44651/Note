@@ -1,4 +1,4 @@
-//javascript is synchronous language
+//JavaScript is a synchronous, blocking, single-threaded language
 (async function main() {
 const sleep = m => new Promise(r => setTimeout(r, m))
     //async example
