@@ -1,8 +1,7 @@
 # why use different salt every time
 > if don't use salt->will be cracked by dictionary attack (frequency of words)
->> every same password will have same hash code
-
->> check the password frequency and hash code frequency
+>1. every same password will have same hash code
+>2. check the password frequency and hash code frequency
 ```
 Here are the top password from 2019:
 
