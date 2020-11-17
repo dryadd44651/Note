@@ -60,11 +60,13 @@ control thread numbers
 reuse threads(reduce creating thread)
 
 # OS
-## Fragmentation
+### Fragmentation
 ```
 Fragmentation: loaded and removed from memory->little pieces memory space->processes cannot be allocated to memory blocks
+
 Internal Fragmentation: Memory block assigned to process is bigger->waste meory(some other cannot allocated)
 (effectively assigning the smallest partition)
+
 External Fragmentation: Total memory space is enough. but it is not contiguous, so it cannot be used.
 (compaction or shuffle memory)
 ```
