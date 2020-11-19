@@ -22,7 +22,7 @@ int main()
 } 
 ```
 # Macro vs inline
-** both can speed up(more memory use) **
+**both can speed up(more memory use)**
 ```
 #include <stdio.h> 
 //Macro (can be int,float, double) (just replace text)
