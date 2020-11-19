@@ -1,9 +1,9 @@
 int main() 
 { 
     // 0x00D 0x00C 0x00B 0x00A <-
-    //Little endian: 00 01 => 1
+    //Little endian: 01 00 => 1
     // 0x00A 0x00B 0x00C 0x00D ->
-    //Big endian   : 01 00 =>255
+    //Big endian   : 10 00 =>16
     unsigned char arr[2] = {0x01, 0x00}; 
     unsigned short int x = *(unsigned short int *) arr; 
     printf("%d\n", x); 
