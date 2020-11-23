@@ -1,6 +1,5 @@
 <?php
-$year= $_POST["year"];
-$gender= $_POST["gender"];
+
 
 
 ?>	
@@ -29,6 +28,11 @@ $gender= $_POST["gender"];
 				<option value="2008">2008</option>
 				<option value="2009">2009</option>
 				<option value="2010">2010</option>
+				<option value="2010">2011</option>
+				<option value="2010">2012</option>
+				<option value="2010">2013</option>
+				<option value="2010">2014</option>
+				<option value="2010">2015</option>
 			</select>
 
 			<select name="gender">
@@ -43,13 +47,14 @@ $gender= $_POST["gender"];
 
 
 <?php
+$year= $_POST["year"];
+$gender= $_POST["gender"];
 if(!empty($year) && !empty($gender)){
-	?>
 	
-
-	<?php
+	
 	//echo "Year: " . $year ." Gender: " . $gender . "<br>";
 	$con = mysqli_connect("localhost", "root", "root", "SSA");
+	//Nested query 
 	$sql = "SELECT * FROM babynames";// WHERE year='$year' AND gender='$gender' ";
 	
 	if ($year!="all")
