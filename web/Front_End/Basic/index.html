@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Hua Chuang's Personal Website"/>
+    <meta name="keywords" content="Master Degree, Computer Science, Machine Learning, Artificial Intelligence, C++, Python, Java, web"/>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"></head>
+    <link rel='icon' href='img/utd.jpg' type='image/jpg' / >
+	<link rel="stylesheet" href="index.css">
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <title>Hua Chuang</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Logo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!--mr-auto: margin right auto-->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#About">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Contact">Contact</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link " href="#"><i class="fas fa-sign-in-alt"></i> LogIn</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="row mt-3 mb-3">
+        <div class="col-ms-12 col-md-2 bg-light">
+            <p class="text-center">
+                <a href="https://www.linkedin.com/in/hxc170014/" >Linkedin</a>
+            </p>
+            <p class="text-center">
+                <a href="https://github.com/dryadd44651/Project" >Github</a>
+            </p>
+            <p class="text-center">
+                <a href="https://www.facebook.com/Howard.Chaung" >Facebook</a>
+            </p>
+        </div>
+        <div class="col-ms-12 col-md-8">
+            <div >
+                <h1>Hua Chuang</h1>
+                <img class=" mr-1" src="img/Howard.jpg" alt="London Photo" float: left; />                
+            <br/>
+            </div>
+            <div id="About">
+				<br/>
+				<h1>About</h1>
+				<h3>EDUCATION</h3>
+				<p>
+				M.S. in Computer Science (GPA 3.7), University of Texas at Dallas, TX 	05/2019 – 12/2020<br>
+				M.Eng. in Computer Science & Info. Systems (GPA 3.9) Tamkang University, Taiwan 	06/2013 – 06/2015<br>
+				</p>
+				<h3>SKILLS</h3>
+				<p>
+				Languages: Python, C/C++/STL, MFC, Java, JavaScript/ES6, R, MatLab, shell scripting<br>
+				Frameworks: OpenCV, Hadoop, Pypark, Keras, Numpy, Node.js, ReactJS, Poco<br>
+				Databases/Tools: MySQL, MongoDB, AWS_EC2, Heroku, Git, Docker, Kafka<br>
+				Knowledge: Computer Vision, OOP/OOD, Machine Learning, Big data, web development<br>
+				</p>
+            </div>   
+            <div id="Projects">
+				<h1>Projects</h1>
+				<p>
+				<b>Fake Image GAN Classifier</b> <i>7/2020 – 09/2020</i><br>
+				-	Combined generator (generate the fake images) and discriminator (discriminate the fake images) model for Generative Adversarial Networks model with TensorFlow.<br>
+				-	Trained the generator with the random noise images for discriminator. Trained the discriminator with fake images produced by generator. With 30000 epoch training, both of models accuracy are near 50%, but the generator can produced quality fake images which even hard to discriminate by human. <br>
+				<br>
+				<b>Nine Men Morris AI Game</b>	<i>6/2020 – 08/2020</i><br>
+				-	Evaluated the positions by the static estimation function and the MINIMAX algorithm estimate for the following move. The MINIMAX can always choose the optimal move if using the full MINIMAX tree.<br>
+				-	Implemented the ALPHA-BETA pruning algorithm to reduce the time complexity significantly. <br>
+				<br>
+				<b>COVID-19 CT-Scan CNN Detector</b>	<i>4/2020 – 07/2020</i><br>
+				-	Extract the input data with Pandas for training.  Load the training, validation and test dataset. Data is augmented by shift and rotation for increasing diversity of data.<br>
+				-	Build the CNN (Convolutional Neural Network) model with VGG style. The 3x3 filter is applied for replacing 5x5, 7x7 and decreasing parameters. The 2x2 max pool is used to avoid overfit. Avoid local minimum solution by the custom function when met the plateau.<br>
+				-	The Training and validation curves are plot for observation if overfit. The confusion matrix is plot for checking the class correlation. The accuracy rate is 82% with 50 epoch, 128 batch size and Adam optimizer.<br>
+				</p>
+            </div>
+			
+        </div>
+
+        <div class="col-ms-12 col-md-2 bg-light">
+            <h2 class="text-center">Sponsors</h2>
+            <button type="button" class="btn btn-primary btn-lg btn-block">ads</button>
+            <button type="button" class="btn btn-primary btn-lg btn-block">ads</button>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <br>
+        <div class="col text-white bg-secondary" id ="Contact" >
+        <p class="text-center">Author: Hua Chuang<br>
+		8590 Kentland Dr Frisco, TX 75034 | Phone: (346) 247-0711 | HXC170014@utdallas.edu</p>
+        </div>
+    </div>
+    
+  </body>
+
+</html>
+

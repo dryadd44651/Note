@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Search Nearby</title>
+    
+      <script defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA27TfzrVvOOC684bD2vBsAxjYo-A8sHGQ&libraries=places&callback=initMap">
+</script>
+    <style type="text/css">
+    #map {
+        height: 100%;
+    }
+
+    /* Optional: Makes the sample page fill the window. */
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    #floating-panel {
+        position: absolute;
+        top: 10px;
+        left: 25%;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+        text-align: center;
+        font-family: "Roboto", "sans-serif";
+        line-height: 30px;
+        padding-left: 10px;
+    }
+    </style>
+    <script>
+
+
+    var map;
+    var service;
+    function initMap() {
+        map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 8,
+            center: {
+            lat: -96.827980,
+            lng: 33.149452
+            }
+        });
+        const geocoder = new google.maps.Geocoder();
+        document.getElementById("submit").addEventListener("click", () => {
+            geocodeAddress(geocoder, map);
+        });
+    }
+    
+    function geocodeAddress(geocoder, resultsMap) {
+    const address = document.getElementById("address").value;
+    geocoder.geocode(
+        {
+        address: address
+        },
+        (results, status) => {
+            if (status === "OK") {
+                map = new google.maps.Map(document.getElementById('map'), {
+                    center: results[0].geometry.location,
+                    zoom: 15
+                    });
+
+                var request = {
+                    location: results[0].geometry.location,
+                    radius: '1500',
+                    type: ['pharmacy']
+                    //type: ['restaurant']
+                };
+
+                service = new google.maps.places.PlacesService(map);
+                service.nearbySearch(request, callback);
+            } else {
+                alert("Geocode was not successful for the following reason: " + status);
+            }
+        }
+    );
+    }
+    function callback(results, status) {
+        console.log(results)
+      if (status == google.maps.places.PlacesServiceStatus.OK) {
+        for (var i = 0; i < results.length; i++) {
+          // createMarker(results[i]);
+
+          new google.maps.Marker({
+            map,
+            title: results[i].name,
+            position: results[i].geometry.location,
+          });
+
+
+        }
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <div id="floating-panel">
+      <input id="address" type="textbox" value="Sydney, NSW" />
+      <input id="submit" type="button" value="Geocode" />
+    </div>
+    <div id="map"></div>
+  </body>
+</html>

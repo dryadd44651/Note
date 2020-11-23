@@ -1,0 +1,9 @@
+body {
+	overflow-x: hidden;
+}
+.box {
+	float: left;
+}
+img {
+	width: 150px;
+}

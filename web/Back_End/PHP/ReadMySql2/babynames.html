@@ -1,0 +1,62 @@
+<html>
+	<head>
+	<style type="text/css">
+		table {
+		  border-collapse: collapse;
+		  width: 75%;
+		}
+
+		table, th, td {
+		  border: 1px solid black;
+		  text-align:center;
+		}
+		tr:hover {background-color:#f5f5f5;}
+		div {
+			padding-top: 10px;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+	$(document).ready(function() {
+		$("button").click(function(){
+			var year=$("#year").val();
+			var gender=$("#gender").val();
+			$("table").html("");
+			$.ajax({
+				method: "POST",
+				url: "babynames.php",
+				data: {year:year, gender:gender},
+				success: function(data) {
+					console.log(data);
+					$("#data").html(data);
+				},
+				error: function() { alert("error loading file");  }
+			});
+			
+		});
+	});
+	</script>
+	</head>
+	<body>
+	
+		<select id="year" name="year">
+			<option value="all">All years</option>
+			<option value="2005">2005</option>
+			<option value="2006">2006</option>
+			<option value="2007">2007</option>
+			<option value="2008">2008</option>
+			<option value="2009">2009</option>
+			<option value="2010">2010</option>
+		</select>
+
+		<select id="gender" name="gender">
+			<option value="both">Both</option>
+			<option value="m">Male</option>
+			<option value="f">Female</option>
+		</select>
+
+		<button>Submit</button>
+		
+		<div id="data"></dive>
+	</body>
+	</html>
