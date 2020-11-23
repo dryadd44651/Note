@@ -40,15 +40,12 @@ for ($row = 0; $row < 4; $row++) {
 // arsort() - sort associative arrays in descending order, according to the value
 // krsort() - sort associative arrays in descending order, according to the key
 
+echo "=======krsort=======\n";
 krsort($age);
-foreach($age as $x => $x_value) {
-  echo "Key=" . $x . ", Value=" . $x_value;
-  echo "\n";
-}
+var_dump($age);
 
+echo "=======asort=======\n";
 asort($age);
-foreach($age as $x => $x_value) {
-  echo "Key=" . $x . ", Value=" . $x_value;
-  echo "\n";
-}
+var_dump($age);
+
 
