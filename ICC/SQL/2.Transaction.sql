@@ -1,5 +1,7 @@
 what is transaction
 
+https://medium.com/@chester.yw.chu/%E8%A4%87%E7%BF%92%E8%B3%87%E6%96%99%E5%BA%AB%E7%9A%84-isolation-level-%E8%88%87%E5%B8%B8%E8%A6%8B%E7%9A%84%E4%BA%94%E5%80%8B-race-conditions-%E5%9C%96%E8%A7%A3-16e8d472a25c
+
 ACID
 atomicity    
 consistency  
@@ -62,17 +64,16 @@ User2           tx              u/d/insert   commit
 -- from hr.employees emp join hr.employees manager on emp.manager_id = manager.employee_id
 -- where emp.salary > manager.salary
 
-emp_id, salary, manager_id  ,    emp_id, salary,  manager_id
-  1     10k       2               1     10k       2
-  2     20k       null            2     20k       null
-  3     25k       2               3     25k       2
-
-emp  emp_salary    mag_id man_salary
-1      10k       2 , 2     20k       null
-3      25k       2 , 2     20k       null
 -- departments top 3 salary,  display emp fn, ln, salary, dept info
 
-
+--1.create rank with partition
+-- select e.*,dense_rank() over (partition by e.department_id order by e.salary desc) as rank 
+-- from hr.employees e
+--2. join department
+-- select d.department_name, e.first_name, e.last_name, e.salary,
+--     dense_rank() over (partition by e.department_id order by e.salary desc) as rank 
+--     from hr.employees e join hr.departments d on e.department_id = d.department_id
+--3. where the condition
 -- select *
 -- from  (select d.department_name, e.first_name, e.last_name, e.salary,
 --       dense_rank() over (partition by e.department_id order by salary desc) as rank
@@ -82,7 +83,16 @@ emp  emp_salary    mag_id man_salary
 
 
 -- departments total salary larger than 20k, dept_id, dept_name
+--1.goup by and get the sum
+-- select e.DEPARTMENT_ID,sum(e.SALARY)
+--       from hr.employees e group by e.DEPARTMENT_ID
 
+--2.join and get the dept name
+-- must put all columns of the SELECT in the GROUP BY
+-- select d.department_id, d.department_name, sum(salary) as sum
+--       from hr.employees e join hr.departments d on e
+
+--3. having get the sum>20000
 -- select d.department_id, d.department_name, sum(salary) as sum
 -- from hr.employees e join hr.departments d on e.department_id = d.department_id
 -- group by d.department_id, d.department_name
@@ -114,6 +124,7 @@ emp  emp_salary    mag_id man_salary
 -- from A, B, C, D, E
 -- where (A.b_id = B.id..) and
 
+-- cross join
 -- A   B
 -- 1   4
 -- 2   5
