@@ -2,34 +2,35 @@ normalization 1st / 2nd / 3rd
 table design 1 - 1 / 1 - m / m - m
 
 
-
+--use explain to find out how SQL retrieve data
 explain plan for
+--(select /*+ full(e d) */ *)
 select /*+ use_nl(e d) */ *
 from hr.employees e join hr.departments d on e.department_id = d.department_id;
 select * from table(dbms_xplan.display);
-
-
-
-
-
 
 
 -- PL/SQL (function / stored procedure / trigger)
 -- implicit cursor
 -- explicit cursor
 
+-- --create table
 -- create table stu(
 --     name varchar(50)
 -- )
+-- --create trigger
 -- create or replace trigger stu_trigger
 -- before update of name on stu
 -- for each row
 -- begin
---     dbms_output.put_line(:new.name);
+--     dbms_output.put_line('old name: '||:old.name);
+--     dbms_output.put_line('new name: '||:new.name);
 -- end;
-
--- update stu set name = 'Alic'
--- insert into stu values('tom');
+-- --insert data
+-- insert into stu values('Alic');
+-- --update(trigger will be called)
+-- update stu set name = 'Tom'
+-- --check result
 -- select * from stu
 
 -- -- create or replace function findEmpFunction return number as
@@ -66,6 +67,8 @@ select * from table(dbms_xplan.display);
 -- begin
 --     findEmp(100);
 -- end;
+
+
 -- View
 
 -- create view first_v as
@@ -75,6 +78,8 @@ select * from table(dbms_xplan.display);
 -- select * from first_v
 
 -- select * from (select * from hr.employees)
+
+
 
 -- non-cluster index (B+ tree index, bitmap index)
 
@@ -113,7 +118,8 @@ select * from table(dbms_xplan.display);
 -- 4     M              1   0
 -- 5     F              0   1
 
-
+--where sex='M'
+--get 10110 => 1 3 4
 
 -- emp        
 -- id,  STATE     rowid  NJ  NY VA
@@ -127,8 +133,8 @@ select * from table(dbms_xplan.display);
 
 -- NJ  10110
 -- or
--- NY  01001
--- 11111
+-- NY  01000
+-- 11110 => 1 2 3 4
 
 -- Index organized table
 
