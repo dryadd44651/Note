@@ -52,7 +52,7 @@ end;
 
 
 
--- View
+-- View (provide view to User to hide the data from User)
 
 -- create view first_v as
 -- select first_name, last_name from hr.employees
