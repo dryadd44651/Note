@@ -1,4 +1,4 @@
-// Java Program to demonstrate usuage of BlockingQueue 
+package com.antra.BlockingQueue;
 
 import java.util.concurrent.*; 
 import java.util.*; 
@@ -22,13 +22,14 @@ public class BlockingQueue1 {
                 queue.put(-1);
             }
             catch(Exception e) {
-                System.err.println("error");
+                System.err.println("error1");
             }
         }).start(); 
         new Thread(()-> {
             try {
                 while(true){
-                int i = (int)queue.poll();
+                Integer i = (Integer)queue.poll();
+                if(i==null) continue;
                 if(i==-1)
                     break;
                 else
@@ -36,7 +37,7 @@ public class BlockingQueue1 {
                 }
             }
             catch(Exception e) {
-                System.err.println("error");
+                System.err.println(e);
             }
         }).start(); 
 
