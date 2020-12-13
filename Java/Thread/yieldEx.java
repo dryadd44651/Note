@@ -1,8 +1,3 @@
-// Java Program to demonstrate usuage of BlockingQueue 
-
-import java.util.concurrent.*; 
-import java.util.*;
-
 class yieldEx extends Thread{
     
     int num;
