@@ -1,0 +1,2 @@
+What is an advantage of using the runnable interface?
+Java only supports single inheritance, so you can only extend one class. Instantiating an interface gives a cleaner separation between your code and the implementation of threads. Implementing Runnable makes your class more flexible. If you extend Thread then the action you're doing is always going to be in a thread.

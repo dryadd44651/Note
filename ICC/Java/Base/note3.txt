@@ -1,0 +1,9 @@
+Q: way immute why scp
+A: save memory and thread safe
+
+equal() should be override if you want to use
+stringbuffer: equal() have not been overrided (need to use toString + equal)
+String: equal() have been overrided
+How to make immutable class: final class + final instance variables
+
+
