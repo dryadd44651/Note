@@ -1,0 +1,9 @@
+jmeter: check thread tool
+session: inconsistant in load balance (diff servers)
+sloved: DataBase, data sync, Sticky session(same ip always sent to same mechine)
+
+trainingprojects servletjsp
+
+obj.getclass
+
+why thread pool: create the thread is expensive. Control the resource.
