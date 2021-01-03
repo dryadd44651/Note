@@ -1,5 +1,5 @@
 package net.antra.design.singleton;
-
+//thread serialization(slow)
 public class SingletonC {
 	private static SingletonC instance= null;
 	private SingletonC(){}
