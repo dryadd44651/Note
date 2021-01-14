@@ -6,5 +6,5 @@ SpringInterface: : slove ambiguity, cross package
 
 SpringConfig: configure in config.java @Bean (don't need to modify the class.java file)(can be used in third part library)
 
-SpringScope: Sinleton vs Prototype, lazy loading, @PostConstruct and PreDestroy, AOP(@Before and @ After)
+SpringScope: Sinleton vs Prototype, lazy loading, @PostConstruct and PreDestroy, AOP(aspect-oriented programming): @Before and @ After
 
