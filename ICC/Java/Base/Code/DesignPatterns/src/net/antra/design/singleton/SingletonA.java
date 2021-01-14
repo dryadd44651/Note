@@ -3,7 +3,7 @@ package net.antra.design.singleton;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-
+//no lazy loading(wast memory)
 public class SingletonA {
 	private static final SingletonA instance = new SingletonA();
 
