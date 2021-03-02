@@ -112,6 +112,8 @@ public class note{
         for (Map.Entry< String,Integer> entry : hm.entrySet())
             System.out.println(entry);
 	hm.containsKey(100);
+	//update by override
+	hm.put("d", new Integer(500)); 
          // Returns Set view      
 //         Set< Map.Entry< String,Integer> > st = hm.entrySet();    
 
