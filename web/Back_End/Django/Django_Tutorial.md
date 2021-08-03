@@ -59,9 +59,9 @@ polls/
 
 ```
 
-### Registering the catalog application
+### Registering the polls application
 
-**django_projects/locallibrary/locallibrary/settings.py**
+**/mysite/mysite/settings.py**
 
 ```python
 INSTALLED_APPS = [
