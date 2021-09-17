@@ -8,6 +8,7 @@
             "name": "Python: Django",
             "type": "python",
             "request": "launch",
+            "pythonPath":"${workspaceFolder}\\..\\env\\Scripts\\python.exe",
             "program": "${workspaceFolder}\\mysite\\manage.py",
             "args": [
                 "runserver"
